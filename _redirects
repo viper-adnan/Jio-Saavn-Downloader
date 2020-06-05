@@ -1,1 +1,2 @@
 /api/*  https://jiosaavnapi.bhadoo.uk/result/:splat  200
+/play/*  https://h.saavncdn.com/:splat  200
