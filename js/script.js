@@ -69,3 +69,11 @@ else {
         xmlhttp.open("GET", "/api/?query=" + surl, true);
         xmlhttp.send();
 }
+function myFunction() {
+  var x = document.getElementById("footer");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
