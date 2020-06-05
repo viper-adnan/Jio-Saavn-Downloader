@@ -12,8 +12,6 @@ return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterNam
 }
 };
 var surl = getUrlParameter('url');
-var fsurl = surl.replace("+", " ");
-
 if (surl == null) {
     document.getElementById("status").innerHTML = "<h5>Welcome to<br>JioSaavn Downloader</h5>" ;
 }
@@ -49,6 +47,7 @@ else if (surl.startsWith("http://") || surl.startsWith("https://") || surl.start
 
 else {
         var obj, xmlhttp, myObj, x, txt = "";
+        var fsurl = surl.replace("+", " ");
         obj = { table: "customers", limit: 20 };
         dbParam = JSON.stringify(obj);
         xmlhttp = new XMLHttpRequest();
