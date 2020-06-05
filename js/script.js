@@ -22,7 +22,8 @@ else if (surl.startsWith("http://") || surl.startsWith("https://") || surl.start
           if (this.readyState == 4 && this.status == 200) {
             var t = JSON.parse(this.responseText);
             var e = t.url;
-            var m = e.replace("http://h.saavncdn.com", "/play");;
+            var m = e.replace("http://h.saavncdn.com", "/play");
+            var fsurl = surl.replace("+", " ");
             if (e == null) {
             document.getElementById("status").innerHTML = "<h5>Please Enter JioSaavn Song Link</h5>" ;
                 if (surl != null){
@@ -54,7 +55,7 @@ else {
         xmlhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
-            txt += "<table class='table table-striped table-bordered'><caption>Results for : " + surl + "</caption><thead><tr><th scope='col'>Name</th><th scope='col'>Link</th></tr></thead><tbody>"
+            txt += "<table class='table table-striped table-bordered'><caption>Results for : " + fsurl + "</caption><thead><tr><th scope='col'>Name</th><th scope='col'>Link</th></tr></thead><tbody>"
             for (x in myObj) {
               txt += "<tr><td>" + myObj[x].title + " By " + myObj[x].singers + "</td><td><a href='/?url=" + myObj[x].perma_url + "' target='_blank'>Open</a></td></tr>";
             }
