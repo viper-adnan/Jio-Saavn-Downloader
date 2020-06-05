@@ -12,6 +12,7 @@ return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterNam
 }
 };
 var surl = getUrlParameter('url');
+var fsurl = surl.replace("+", " ");
 
 if (surl == null) {
     document.getElementById("status").innerHTML = "<h5>Welcome to<br>JioSaavn Downloader</h5>" ;
@@ -23,7 +24,6 @@ else if (surl.startsWith("http://") || surl.startsWith("https://") || surl.start
             var t = JSON.parse(this.responseText);
             var e = t.url;
             var m = e.replace("http://h.saavncdn.com", "/play");
-            var fsurl = surl.replace("+", " ");
             if (e == null) {
             document.getElementById("status").innerHTML = "<h5>Please Enter JioSaavn Song Link</h5>" ;
                 if (surl != null){
