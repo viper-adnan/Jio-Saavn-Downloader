@@ -30,7 +30,7 @@ else if (surl.startsWith("https://www.jiosaavn.com/album/")){
               txt += "<tr><td>" + al.songs[x].song + " By " + al.songs[x].singers + "</td><td><a href='/?url=" + al.songs[x].perma_url + "' target='_blank'>Open</a></td></tr>";
             }
             txt += "</tbody></table>"  
-            document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='" + al.name + " " + al.primary_artists + " (" + al.year + ")' autocomplete='off' required><input type='submit' value='Search'>";
+            document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
             document.getElementById("download").innerHTML = txt;
             document.getElementById("status").innerHTML = "<img src='" + al.songs[0].image + "' width='250px' height='250px'>" ;
           }
