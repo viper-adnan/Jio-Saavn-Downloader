@@ -65,7 +65,7 @@ else {
             myObj = JSON.parse(this.responseText);
             txt += "<table class='table table-striped table-bordered'><caption>Results for : " + fsurl + "</caption><thead><tr><th scope='col'>Name</th><th scope='col'>Link</th></tr></thead><tbody>"
             for (x in myObj) {
-              txt += "<tr><td>" + myObj[x].title + " By " + myObj[x].singers + "</td><td><a href='/?url=" + myObj[x].perma_url + "' target='_blank'>Open</a></td></tr>";
+              txt += "<tr><td>" + myObj[x].title + " By " + myObj[x].singers + "</td><td><a href='/?url=" + myObj[x].perma_url + "'>Open</a></td></tr>";
             }
             txt += "</tbody></table>"  
             document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='" + fsurl + "' autocomplete='off' required><input type='submit' value='Search'>";
