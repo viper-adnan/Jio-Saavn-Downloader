@@ -36,7 +36,7 @@ else if (surl.startsWith("http://") || surl.startsWith("https://") || surl.start
         }
         else if (e.endsWith(".mp3") === true){
             var m = e.replace("http://h.saavncdn.com", "/play");
-            document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
+            document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='" + t.title + " By " + t.singers + "' autocomplete='off' required><input type='submit' value='Search'>";
             document.getElementById("download").innerHTML = "<table class='table table-striped'> <thead> <tr> <th scope='col'>Name</th> <td>" + t.title + "</td> </tr> </thead> <tbody> <tr> <th scope='row'>Singer</th> <td>" + t.singers + "</td> </tr> <tr> <th scope='row'>Album</th> <td>" + t.album + "</td> </tr> <tr> <th scope='row'>Language</th> <td>" + t.language + "</td> </tr> <tr> <th scope='row'>Label</th> <td>" + t.label + "</td> </tr> </tbody> </table><a href='" + t.url + "' class='button7' style='background-color:#2979FF'>Download MP3 320kbps</a>"
             document.getElementById("status").innerHTML = "<img src='" + t.image_url + "' width='250px' height='250px'><br><br><center><audio controls style='width: 100%; max-width:600px;'> <source src='" + m + "' type='audio/ogg'> <source src='" + m + "' type='audio/mpeg'> Your browser does not support the audio element. </audio></center>" ;
         }
