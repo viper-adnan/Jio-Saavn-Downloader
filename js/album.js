@@ -1,3 +1,12 @@
+function switchfunc() {
+  var x = document.getElementById("footer");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
 source = document.getElementById('srcid');
 var getUrlParameter = function getUrlParameter(sParam) {
 var sPageURL = window.location.search.substring(1),
@@ -59,11 +68,4 @@ else if (surl.startsWith("https://www.jiosaavn.com/album/")) {
             
         }
     
-function switchfunc() {
-  var x = document.getElementById("footer");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
+
