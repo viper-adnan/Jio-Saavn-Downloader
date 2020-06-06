@@ -27,7 +27,7 @@ else if (surl.startsWith("https://www.jiosaavn.com/album/")){
             al = JSON.parse(this.responseText);
             txt += "<h5>" + al.name + "</h5> (" + al.year + ")" + "</h5><table class='table table-striped table-bordered'><caption>Results for : " + fsurl + "</caption><thead><tr><th scope='col'>Name</th><th scope='col'>Link</th></tr></thead><tbody>"
             for (x in al.songs) {
-              txt += "<tr><td>" + al.songs[x].song + " By " + al.songs[x].singers + "</td><td><a href='/?url=" + al.songs[x].perma_url + "' target='_blank'>Open</a></td></tr>";
+              txt += "<tr><td>" + al.songs[x].song + " By " + al.songs[x].singers + "</td><td><a href='/?url=" + al.songs[x].perma_url + "'>Open</a></td></tr>";
             }
             txt += "</tbody></table>"  
             document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
