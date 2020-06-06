@@ -13,7 +13,7 @@ return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterNam
 };
 var surl = getUrlParameter('url');
 if (surl == null) {
-    document.getElementById("status").innerHTML = "<h5>Welcome to<br>JioSaavn Downloader</h5>";
+    document.getElementById("status").innerHTML = "<h5>Welcome to<br>JioSaavn Downloader</h5><a href='/?url=https://www.jiosaavn.com/song/meri-aashiqui/RV4pdS5obh4'><img src='https://c.saavncdn.com/952/Meri-Aashiqui-Hindi-2020-20200602234001-500x500.jpg' width='250px' height='250px'>";
     document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value=''><input type='submit' value='Search'>";
 }
 else if (surl.startsWith("http://") || surl.startsWith("https://") || surl.startsWith("www.jiosaavn.com") || surl.startsWith("jiosaavn.com") || surl.startsWith("www.saavn.com") || surl.startsWith("saavn.com")) {
@@ -30,8 +30,8 @@ else if (surl.startsWith("http://") || surl.startsWith("https://") || surl.start
                 document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value=''><input type='submit' value='Search'>";
                 }
             else {
-                document.getElementById("download").innerHTML = "Welcome to JioSaavn Downloader";
-                document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value=''><input type='submit' value='Search'>";
+                document.getElementById("status").innerHTML = "<h5>Welcome to<br>JioSaavn Downloader</h5><a href='/?url=https://www.jiosaavn.com/song/meri-aashiqui/RV4pdS5obh4'><img src='https://c.saavncdn.com/952/Meri-Aashiqui-Hindi-2020-20200602234001-500x500.jpg' width='250px' height='250px'>";
+    document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value=''><input type='submit' value='Search'>";
             }
         }
         else if (e.endsWith(".mp3") === true){
