@@ -21,17 +21,21 @@ else if (surl.startsWith("http://") || surl.startsWith("https://") || surl.start
           if (this.readyState == 4 && this.status == 200) {
             var t = JSON.parse(this.responseText);
             var e = t.url;
-            var m = e.replace("http://h.saavncdn.com", "/play");
             if (e == null) {
             document.getElementById("status").innerHTML = "<h5>Please Enter JioSaavn Song Link</h5>" ;
+            document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value=''><input type='submit' value='Submit'>";
                 if (surl != null){
                 document.getElementById("download").innerHTML = "Unable to Download from this Link" ;
+                document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value=''><input type='submit' value='Submit'>";
                 }
             else {
                 document.getElementById("download").innerHTML = "Welcome to JioSaavn Downloader" ;
+                document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value=''><input type='submit' value='Submit'>";
             }
         }
         else if (e.endsWith(".mp3") === true){
+            var m = e.replace("http://h.saavncdn.com", "/play");
+            document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value=''><input type='submit' value='Submit'>";
             document.getElementById("download").innerHTML = "<table class='table table-striped'> <thead> <tr> <th scope='col'>Name</th> <td>" + t.title + "</td> </tr> </thead> <tbody> <tr> <th scope='row'>Singer</th> <td>" + t.singers + "</td> </tr> <tr> <th scope='row'>Album</th> <td>" + t.album + "</td> </tr> <tr> <th scope='row'>Language</th> <td>" + t.language + "</td> </tr> <tr> <th scope='row'>Label</th> <td>" + t.label + "</td> </tr> </tbody> </table><a href='" + t.url + "' class='button7' style='background-color:#2979FF'>Download MP3 320kbps</a>"
             document.getElementById("status").innerHTML = "<img src='" + t.image_url + "' width='250px' height='250px'><br><br><center><audio controls style='width: 100%; max-width:600px;'> <source src='" + m + "' type='audio/ogg'> <source src='" + m + "' type='audio/mpeg'> Your browser does not support the audio element. </audio></center>" ;
         }
@@ -41,7 +45,7 @@ else if (surl.startsWith("http://") || surl.startsWith("https://") || surl.start
         }
             
         };
-        xmlhttp.open("GET", "/api/?query=" + surl, true);
+        xmlhttp.open("GET", "https://jiosaavnapi.bhadoo.uk/result/?query=" + surl, true);
         xmlhttp.send();
 }
 
@@ -58,7 +62,8 @@ else {
             for (x in myObj) {
               txt += "<tr><td>" + myObj[x].title + " By " + myObj[x].singers + "</td><td><a href='/?url=" + myObj[x].perma_url + "' target='_blank'>Open</a></td></tr>";
             }
-            txt += "</tbody></table>"    
+            txt += "</tbody></table>"  
+            document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='" + fsurl + "'><input type='submit' value='Submit'>";
             document.getElementById("download").innerHTML = txt;
             document.getElementById("status").innerHTML = "" ;
           }
@@ -66,7 +71,7 @@ else {
               document.getElementById("status").innerHTML = "<img src='/images/processing.gif' width='150px' height='150px'>" ;
           }
         };
-        xmlhttp.open("GET", "/api/?query=" + surl, true);
+        xmlhttp.open("GET", "https://jiosaavnapi.bhadoo.uk/result/?query=" + surl, true);
         xmlhttp.send();
 }
 function myFunction() {
