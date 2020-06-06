@@ -13,7 +13,8 @@ return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterNam
 };
 var surl = getUrlParameter('url');
 if (surl == null) {
-    document.getElementById("status").innerHTML = "<h5>Welcome to<br>JioSaavn Downloader</h5>" ;
+    document.getElementById("status").innerHTML = "<h5>Welcome to<br>JioSaavn Downloader</h5>";
+    document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value=''><input type='submit' value='Submit'>";
 }
 else if (surl.startsWith("http://") || surl.startsWith("https://") || surl.startsWith("www.jiosaavn.com") || surl.startsWith("jiosaavn.com") || surl.startsWith("www.saavn.com") || surl.startsWith("saavn.com")) {
         var xmlhttp = new XMLHttpRequest();
@@ -29,7 +30,7 @@ else if (surl.startsWith("http://") || surl.startsWith("https://") || surl.start
                 document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value=''><input type='submit' value='Submit'>";
                 }
             else {
-                document.getElementById("download").innerHTML = "Welcome to JioSaavn Downloader" ;
+                document.getElementById("download").innerHTML = "Welcome to JioSaavn Downloader";
                 document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value=''><input type='submit' value='Submit'>";
             }
         }
@@ -45,7 +46,7 @@ else if (surl.startsWith("http://") || surl.startsWith("https://") || surl.start
         }
             
         };
-        xmlhttp.open("GET", "https://jiosaavnapi.bhadoo.uk/result/?query=" + surl, true);
+        xmlhttp.open("GET", "/api/?query=" + surl, true);
         xmlhttp.send();
 }
 
@@ -71,7 +72,7 @@ else {
               document.getElementById("status").innerHTML = "<img src='/images/processing.gif' width='150px' height='150px'>" ;
           }
         };
-        xmlhttp.open("GET", "https://jiosaavnapi.bhadoo.uk/result/?query=" + surl, true);
+        xmlhttp.open("GET", "/api/?query=" + surl, true);
         xmlhttp.send();
 }
 function myFunction() {
