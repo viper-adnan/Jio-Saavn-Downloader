@@ -44,19 +44,14 @@ else if (surl.startsWith("https://www.jiosaavn.com/album/")) {
                         xmlhttp.onreadystatechange = function() {
                                 if (this.readyState == 4 && this.status == 200) {
                                 myObj = JSON.parse(this.responseText);
-                                txt += "<table class='table table-striped table-bordered'><caption>Results for : " + fsurl + "</caption><thead><tr><th scope='col'>Name</th><th scope='col'>Link</th></tr></thead><tbody>"
+                                txt += "<table class='table table-striped table-bordered'><caption>Results for : " + fsurl + "</caption><thead><tr><th scope='col'>Name</th><th scope='col'>Link</th></tr></thead><tbody>";
                                 for (x in myObj) {
                                   txt += "<tr><td>" + myObj[x].songs.song + " By " + myObj[x].songs.singers + "</td><td><a href='/?url=" + myObj[x].songs.perma_url + "' target='_blank'>Open</a></td></tr>";
                                 }
-                                txt += "</tbody></table>"  
+                                txt += "</tbody></table>";
                                 document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='" + fsurl + "' autocomplete='off' required><input type='submit' value='Search'>";
                                 document.getElementById("download").innerHTML = txt;
                                 document.getElementById("status").innerHTML = "" ; 
                                 }
+                        };
                         }
-          }
-}
-            
-        }
-    
-
