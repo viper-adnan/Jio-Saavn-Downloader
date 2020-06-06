@@ -52,7 +52,7 @@ else if (surl.startsWith("http://") || surl.startsWith("https://") || surl.start
 
 else {
         var obj, xmlhttp, myObj, x, txt = "";
-        var fsurl = surl.replace("+", " ");
+        var fsurl = surl.replace(/\+/g, " ");
         obj = { table: "customers", limit: 20 };
         dbParam = JSON.stringify(obj);
         xmlhttp = new XMLHttpRequest();
