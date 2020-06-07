@@ -47,10 +47,10 @@ self.addEventListener('activate', function(e) {
 self.addEventListener('fetch', function(e) {
 
     // Return if the current request url is in the never cache list
-    if (!neverCacheUrls.every(checkNeverCacheList, e.request.url)) {
-        console.log('JioSaavn SW: Current request is excluded from cache.');
-        return;
-    }
+    // if (!neverCacheUrls.every(checkNeverCacheList, e.request.url)) {
+    //     console.log('JioSaavn SW: Current request is excluded from cache.');
+    //     return;
+    // }
 
     // Return if request url protocal isn't http or https
     if (!e.request.url.match(/^(http|https):/ / i))
