@@ -1,6 +1,6 @@
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-        navigator.serviceWorker.register(jiosaavnsw.url)
+        navigator.serviceWorker.register(jiosaavn.url)
             .then(function(registration) {
                 console.log('JioSaavn Service worker ready');
                 registration.update();
