@@ -25,7 +25,7 @@ if (surl == null) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             al = JSON.parse(this.responseText);
-            txt += "<h5>" + al.name + "</h5> (" + al.year + ")" + "</h5><table class='table table-striped table-bordered'><caption style='caption-side:top;word-break:break-all;>Results for : " + fsurl + "</caption><thead><tr><th scope='col'>Name</th><th scope='col'>Link</th></tr></thead><tbody>"
+            txt += "<h5>" + al.name + "</h5> (" + al.year + ")" + "</h5><table class='table table-striped table-bordered'><caption style='caption-side:top;word-break:break-all;'>Results for : " + fsurl + "</caption><thead><tr><th scope='col'>Name</th><th scope='col'>Link</th></tr></thead><tbody>"
             for (x in al.songs) {
                 txt += "<tr><td>" + al.songs[x].song + " By " + al.songs[x].singers + "</td><td><a href='/?url=" + al.songs[x].perma_url + "'>Open</a></td></tr>";
             }
