@@ -10,6 +10,7 @@ const filesToCache = [
   '/js/script.min.js',
   '/images/logo.png'
 ];
+const neverCacheUrls = '';
 
 // Install
 self.addEventListener('install', function(e) {
