@@ -6,8 +6,8 @@ const offlinePage = 'https://jiosaavn.ga/offline.html';
 const filesToCache = [
   startPage,
   offlinePage,
-  '/css/style.min.css',
-  '/js/script.min.js',
+  '/css/style.css',
+  '/js/script.js',
   '/images/logo.png'
 ];
 const neverCacheUrls = '';
