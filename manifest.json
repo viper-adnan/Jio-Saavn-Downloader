@@ -14,12 +14,12 @@
     "prefer_related_applications": false,
     "icons": [
         {
-            "src": "/thumbnail.webp",
+            "src": "/images/thumbnail.webp",
             "sizes": "196x196",
             "type": "image/png"
         },
         {
-            "src": "/thumbnail.webp",
+            "src": "/images/thumbnail.webp",
             "sizes": "512x512",
             "type": "image/png"
         }
