@@ -53,8 +53,8 @@ self.addEventListener('fetch', function(e) {
     // }
 
     // Return if request url protocal isn't http or https
-    if (!e.request.url.match(/^(http|https):/ / i))
-        return;
+    // if (!e.request.url.match(/^(http|https):/ / i))
+    //     return;
 
     // Return if request url is from an external domain.
     if (new URL(e.request.url).origin !== location.origin)
