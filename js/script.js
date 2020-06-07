@@ -35,10 +35,12 @@ else if (surl.startsWith("http://www.jiosaavn.com/song/") || surl.startsWith("ht
             }
         }
         else if (e.endsWith(".mp3") === true){
-            var m = e.replace("http://h.saavncdn.com", "/play");
+            var m = e.replace("http://h.saavncdn.com", "/mp3");
+            var m1 = e.replace("http://h.saavncdn.com", "/mp3").replace("_320", "");
+            var n = e.replace("http://h.saavncdn.com", "/mp4").replace('.mp3','.mp4');
             document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='" + t.title + " By " + t.singers + "' autocomplete='off' required><input type='submit' value='Search'>";
             document.getElementById("download").innerHTML = "<table class='table table-striped'> <thead> <tr> <th scope='col'>Name</th> <td>" + t.title + "</td> </tr> </thead> <tbody> <tr> <th scope='row'>Singer</th> <td>" + t.singers + "</td> </tr> <tr> <th scope='row'>Album</th> <td><a href='/album/?url=" + t.album_url + "'>" + t.album + "</a></td> </tr> <tr> <th scope='row'>Language</th> <td>" + t.language + "</td> </tr> <tr> <th scope='row'>Label</th> <td>" + t.label + "</td> </tr> </tbody> </table><a href='" + t.url + "' class='button7' style='background-color:#2979FF'>Download MP3 320kbps</a>"
-            document.getElementById("status").innerHTML = "<img src='" + t.image_url + "' width='250px' height='250px'><br><br><center><audio controls style='width: 100%; max-width:600px;'> <source src='" + m + "' type='audio/ogg'> <source src='" + m + "' type='audio/mpeg'> Your browser does not support the audio element. </audio></center>" ;
+            document.getElementById("status").innerHTML = "<img src='" + t.image_url + "' width='250px' height='250px'><br><br><center><audio controls style='width: 100%; max-width:600px;'> <source src='" + m + "' type='audio/mp3'> <source src='" + m1 + "' type='audio/mpeg'> <source src='" + n + "' type='audio/mp4'> Your browser does not support the audio element. </audio></center>" ;
         }
           }
          else if (this.readyState == 4 && this.status !== 200){
@@ -66,9 +68,9 @@ else {
         xmlhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
-            txt += "<table class='table table-striped table-bordered'><caption>Results for : " + fsurl + "</caption><thead><tr><th scope='col'>Name</th><th scope='col'>Link</th></tr></thead><tbody>"
+            txt += "<table class='table table-striped table-bordered'><caption style='caption-side:top;word-break:break-all;'>Results for : " + fsurl + "</caption><thead><tr><th scope='col'>Name</th><th scope='col'>Album</th></tr></thead><tbody>"
             for (x in myObj) {
-              txt += "<tr><td>" + myObj[x].title + " By " + myObj[x].singers + "</td><td><a href='/?url=" + myObj[x].perma_url + "'>Open</a></td></tr>";
+              txt += "<tr><td><a href='/?url=" + myObj[x].perma_url + "'>" + myObj[x].title + " By " + myObj[x].singers + "</a></td><td><a href='/?url=" + myObj[x].album_url + "'>" + myObj[x].album + "</td></tr>";
             }
             txt += "</tbody></table>"  
             document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='" + fsurl + "' autocomplete='off' required><input type='submit' value='Search'>";
