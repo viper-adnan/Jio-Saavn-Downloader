@@ -3,7 +3,6 @@
 const cacheName = 'jiosaavnsw';
 const startPage = 'https://jiosaavn.ga';
 const offlinePage = 'https://jiosaavn.ga/offline.html';
-const filesToCache = [startPage, offlinePage];
 const filesToCache = [
   startPage,
   offlinePage,
