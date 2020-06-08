@@ -4,13 +4,14 @@ const cacheName = 'jiosaavnsw';
 const startPage = 'https://jiosaavn.ga';
 const offlinePage = 'https://jiosaavn.ga/offline.html';
 const filesToCache = [
-  startPage,
+  ,
   offlinePage,
   '/css/style.css',
   '/js/script.js',
-  '/images/logo.png'
+  '/images/logo.png',
+  'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'
 ];
-const neverCacheUrls = '';
+const neverCacheUrls = startPage;
 
 // Install
 self.addEventListener('install', function(e) {
