@@ -71,12 +71,13 @@ if (surl == null) {
             }
                 }
             } else if (e.endsWith(".mp3") === true) {
-                var m = e.replace("http://h.saavncdn.com", "/mp3");
-                var m1 = e.replace("http://h.saavncdn.com", "/mp3").replace("_320", "");
-                var n = e.replace("http://h.saavncdn.com", "/mp4").replace('.mp3', '.mp4');
+                var m = e.replace("http://h.saavncdn.com", "https://mp3.jiosaavn.ga/h.saavncdn.com");
+                var dl = e.replace("http://h.saavncdn.com", "/mp3");
+                var m1 = e.replace("http://h.saavncdn.com", "https://mp3.jiosaavn.ga/h.saavncdn.com ").replace("_320", "");
+                var n = e.replace("http://h.saavncdn.com", "https://mp3.jiosaavn.ga/aac.saavncdn.com").replace('.mp3', '.mp4');
                 document.title = t.title + " - JioSaavn.ga";
                 document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' onfocus='this.value=\"\"' value='" + t.title + " By " + t.singers + "' autocomplete='off' required><input type='submit' value='Search'>";
-                document.getElementById("download").innerHTML = "<table class='table table-striped'> <thead> <tr> <th scope='col'>Name</th> <td>" + t.title + "</td> </tr> </thead> <tbody> <tr> <th scope='row'>Singer</th> <td>" + t.singers + "</td> </tr> <tr> <th scope='row'>Album</th> <td><a href='/album/?url=" + t.album_url + "'>" + t.album + "</a></td> </tr> <tr> <th scope='row'>Language</th> <td>" + t.language + "</td> </tr> <tr> <th scope='row'>Label</th> <td>" + t.label + "</td> </tr> </tbody> </table><a href='" + t.url + "' class='button7' style='background-color:#2979FF' target='_blank'>Download MP3 320kbps</a>"
+                document.getElementById("download").innerHTML = "<table class='table table-striped'> <thead> <tr> <th scope='col'>Name</th> <td>" + t.title + "</td> </tr> </thead> <tbody> <tr> <th scope='row'>Singer</th> <td>" + t.singers + "</td> </tr> <tr> <th scope='row'>Album</th> <td><a href='/album/?url=" + t.album_url + "'>" + t.album + "</a></td> </tr> <tr> <th scope='row'>Language</th> <td>" + t.language + "</td> </tr> <tr> <th scope='row'>Label</th> <td>" + t.label + "</td> </tr> </tbody> </table><a href='" + dl + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 320kbps</a>"
                 document.getElementById("status").innerHTML = "<img src='" + t.image_url + "' width='250px' height='250px'><br><br><center><audio controls style='width: 100%; max-width:600px;' loop> <source src='" + m + "' type='audio/mp3'> <source src='" + m1 + "' type='audio/mpeg'> <source src='" + n + "' type='audio/mp4'> Your browser does not support the audio element. </audio></center>";
             }
         } else if (this.readyState == 4 && this.status !== 200) {
