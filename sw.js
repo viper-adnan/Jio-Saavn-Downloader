@@ -8,6 +8,7 @@ const filesToCache = [
   offlinePage,
   '/css/style.css',
   '/js/script.js',
+  '/js/album.js',
   '/images/logo.png',
   'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'
 ];
