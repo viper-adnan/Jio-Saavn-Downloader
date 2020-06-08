@@ -14,9 +14,8 @@ var getUrlParameter = function getUrlParameter(sParam) {
 var surl = getUrlParameter('url');
 
 if (surl == null) {
-    document.title = "Album Search - JioSaavn.ga";
-    document.getElementById("status").innerHTML = "<h5>Welcome to<br>JioSaavn Downloader</h5><a href='/?url=https://www.jiosaavn.com/song/meri-aashiqui/RV4pdS5obh4'><img src='https://c.saavncdn.com/952/Meri-Aashiqui-Hindi-2020-20200602234001-500x500.jpg' width='250px' height='250px'>";
-    document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
+    document.title = "Redirecting - JioSaavn.ga";
+    location.href= "/";
 } else if (surl.startsWith("https://www.jiosaavn.com/album/")) {
     var obj, xmlhttp, al, songs, x, txt = "";
     var fsurl = surl.replace(/\+/g, " ");
@@ -25,9 +24,9 @@ if (surl == null) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             al = JSON.parse(this.responseText);
-            txt += "<h5>" + al.name + "</h5> (" + al.year + ")" + "</h5><table class='table table-striped table-bordered'><caption style='caption-side:top;word-break:break-all;'>Results for : " + fsurl + "</caption><thead><tr><th scope='col'>Name</th><th scope='col'>Link</th></tr></thead><tbody>"
+            txt += "<h5>" + al.name + "</h5> (" + al.year + ")" + "</h5><table class='table table-striped table-bordered'><caption style='caption-side:top;word-break:break-all;'>Results for : " + fsurl + "</caption><thead><tr><th scope='col'>Song Name</th><th scope='col'>Singers</th></tr></thead><tbody>"
             for (x in al.songs) {
-                txt += "<tr><td>" + al.songs[x].song + " By " + al.songs[x].singers + "</td><td><a href='/?url=" + al.songs[x].perma_url + "'>Open</a></td></tr>";
+                txt += "<tr><td><a href='/?url=" + al.songs[x].perma_url + "'>" + al.songs[x].song + "</a></td><td>" + al.songs[x].singers + "</td></tr>";
             }
             txt += "</tbody></table>"
             document.title = al.name + " - JioSaavn.ga";
@@ -46,10 +45,6 @@ if (surl == null) {
     document.getElementById("status").innerHTML = "Either Album Link is wrong or We're unable to fetch these details.";
 
 }
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-104532450-8');
 function switchfunc() {
     var x = document.getElementById("footer");
     if (x.style.display === "block") {
