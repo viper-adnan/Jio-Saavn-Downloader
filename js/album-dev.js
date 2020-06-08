@@ -46,7 +46,10 @@ if (surl == null) {
     document.getElementById("status").innerHTML = "Either Album Link is wrong or We're unable to fetch these details.";
 
 }
-
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-104532450-8');
 function switchfunc() {
     var x = document.getElementById("footer");
     if (x.style.display === "block") {
