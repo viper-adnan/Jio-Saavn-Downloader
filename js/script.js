@@ -142,7 +142,7 @@ if (surl == null) {
                                                       var parts3 = line3.split(': ');
                                                       var header3 = parts3.shift();
                                                       var value3 = parts3.join(': ');
-                                                      headerMap3[header3] = value;
+                                                      headerMap3[header3] = value3;
                                                       var status3 = headerMap3["status"];
                                                       if (status3 != "403") {
                                                       document.getElementById("links").innerHTML = "<a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
