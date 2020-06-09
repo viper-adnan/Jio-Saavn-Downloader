@@ -146,9 +146,6 @@ if (surl == null) {
                                                       headerMap[header] = value;
                                                       var status3 = headerMap["status"];
                                                       if (status3 != "403") {
-                                                      document.getElementById("links").innerHTML = "<p>Oops! This Song is not available to Download at all.</p>";
-                                                      }
-                                                      else {
                                                       document.getElementById("links").innerHTML = "<a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
                                                       }
                                                     });
