@@ -99,68 +99,71 @@ if (surl == null) {
                       var value = parts.join(': ');
                       headerMap[header] = value;
                       var status1 = headerMap["status"];
+                      if (status1 == "206" || status1 == "200") {
+                      document.getElementById("links").innerHTML = "<a href='" + dl + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 320kbps</a> <a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
+                      }
+                      
+                      else {
+                                var request = new XMLHttpRequest();
+                                request.open("GET", dl128, true);
+                                request.send();
+                                request.onreadystatechange = function() {
+                                  if(this.readyState == this.HEADERS_RECEIVED) {
+                                    // Get the raw header string
+                                    var headers = request.getAllResponseHeaders();
+                                    // Convert the header string into an array
+                                    // of individual headers
+                                    var arr = headers.trim().split(/[\r\n]+/);
+                                    // Create a map of header names to values
+                                    var headerMap = {};
+                                    arr.forEach(function (line) {
+                                      var parts = line.split(': ');
+                                      var header = parts.shift();
+                                      var value = parts.join(': ');
+                                      headerMap[header] = value;
+                                      var status2 = headerMap["status"];
+                                      if (status2 == "206" || status2 == "200") {
+                                      document.getElementById("links").innerHTML = "<a href='" + dl128 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 128kbps</a>";
+                                      }
+                                      else {
+                                                var request = new XMLHttpRequest();
+                                                request.open("GET", mp4, true);
+                                                request.send();
+                                                request.onreadystatechange = function() {
+                                                  if(this.readyState == this.HEADERS_RECEIVED) {
+                                                    // Get the raw header string
+                                                    var headers = request.getAllResponseHeaders();
+                                                    // Convert the header string into an array
+                                                    // of individual headers
+                                                    var arr = headers.trim().split(/[\r\n]+/);
+                                                    // Create a map of header names to values
+                                                    var headerMap = {};
+                                                    arr.forEach(function (line) {
+                                                      var parts = line.split(': ');
+                                                      var header = parts.shift();
+                                                      var value = parts.join(': ');
+                                                      headerMap[header] = value;
+                                                      var status3 = headerMap["status"];
+                                                      if (status3 == "206" || status3 == "200") {
+                                                      document.getElementById("links").innerHTML = "<a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
+                                                      }
+                                                      else {
+                                                      document.getElementById("links").innerHTML = "<p>Oops! This Song is not available to Download at all.</p>";
+                                                      }
+                                                    });
+                                                  }
+                                                }
+                                                
+                                      }
+                                    });
+                                  }
+                                }
+                                
+                      }
                     });
                   }
                 }
-                if (status1 == "206" || status1 == "200") {
-                document.getElementById("links").innerHTML = "<a href='" + dl + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 320kbps</a> <a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
-                }
-                
-                else {
-                          var request = new XMLHttpRequest();
-                          request.open("GET", dl128, true);
-                          request.send();
-                          request.onreadystatechange = function() {
-                            if(this.readyState == this.HEADERS_RECEIVED) {
-                              // Get the raw header string
-                              var headers = request.getAllResponseHeaders();
-                              // Convert the header string into an array
-                              // of individual headers
-                              var arr = headers.trim().split(/[\r\n]+/);
-                              // Create a map of header names to values
-                              var headerMap = {};
-                              arr.forEach(function (line) {
-                                var parts = line.split(': ');
-                                var header = parts.shift();
-                                var value = parts.join(': ');
-                                headerMap[header] = value;
-                                var status2 = headerMap["status"];
-                              });
-                            }
-                          }
-                          if (status2 == "206" || status2 == "200") {
-                          document.getElementById("links").innerHTML = "<a href='" + dl128 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 128kbps</a>";
-                          }
-                          else {
-                                    var request = new XMLHttpRequest();
-                                    request.open("GET", mp4, true);
-                                    request.send();
-                                    request.onreadystatechange = function() {
-                                      if(this.readyState == this.HEADERS_RECEIVED) {
-                                        // Get the raw header string
-                                        var headers = request.getAllResponseHeaders();
-                                        // Convert the header string into an array
-                                        // of individual headers
-                                        var arr = headers.trim().split(/[\r\n]+/);
-                                        // Create a map of header names to values
-                                        var headerMap = {};
-                                        arr.forEach(function (line) {
-                                          var parts = line.split(': ');
-                                          var header = parts.shift();
-                                          var value = parts.join(': ');
-                                          headerMap[header] = value;
-                                          var status3 = headerMap["status"];
-                                        });
-                                      }
-                                    }
-                                    if (status3 == "206" || status3 == "200") {
-                                    document.getElementById("links").innerHTML = "<a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
-                                    }
-                                    else {
-                                    document.getElementById("links").innerHTML = "<p>Oops! This Song is not available to Download at all.</p>";
-                                    }
-                          }
-                }
+
             }
         } else if (this.readyState == 4 && this.status !== 200) {
             document.title = "Server Offline - JioSaavn.ga";
