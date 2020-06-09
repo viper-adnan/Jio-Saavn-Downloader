@@ -103,8 +103,7 @@ if (surl == null) {
                       if (status1 != "403") {
                       document.getElementById("links").innerHTML = "<a href='" + dl + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 320kbps</a>";
                       }
-                      
-                      else if (status1 == "403") {
+                      if (status1 == "403") {
                                 var request = new XMLHttpRequest();
                                 request.open("GET", dl128, true);
                                 request.send();
@@ -126,7 +125,7 @@ if (surl == null) {
                                       if (status1 == "403" || status2 != "403") {
                                       document.getElementById("links").innerHTML = "<a href='" + dl128 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 128kbps</a>";
                                       }
-                                      else if (status1 == "403" || status2 == "403"){
+                                      if (status1 == "403" || status2 == "403"){
                                                 var request = new XMLHttpRequest();
                                                 request.open("GET", dlmp4, true);
                                                 request.send();
@@ -148,7 +147,7 @@ if (surl == null) {
                                                       if (status1 == "403" || status2 == "403" || status3 != "403") {
                                                       document.getElementById("links").innerHTML = "<a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
                                                       }
-                                                      else if (status1 == "403" || status2 == "403" || status3 == "403") {
+                                                      if (status1 == "403" || status2 == "403" || status3 == "403") {
                                                       document.getElementById("links").innerHTML = "<h5>This Song is not available to download in any format.</h5>";
                                                       }
                                                     });
