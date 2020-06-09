@@ -125,35 +125,8 @@ if (surl == null) {
                                       if (status2 != "403") {
                                       document.getElementById("links").innerHTML = "<a href='" + dl128 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 128kbps</a>";
                                       }
-                                      else if (status2 == "403"){
-                                                var request3 = new XMLHttpRequest();
-                                                request3.open("GET", dlmp4, true);
-                                                request3.send();
-                                                request3.onreadystatechange = function() {
-                                                  if(this.readyState == this.HEADERS_RECEIVED) {
-                                                    // Get the raw header string
-                                                    var headers3 = request3.getAllResponseHeaders();
-                                                    // Convert the header string into an array
-                                                    // of individual headers
-                                                    var arr3 = headers3.trim().split(/[\r\n]+/);
-                                                    // Create a map of header names to values
-                                                    var headerMap3 = {};
-                                                    arr3.forEach(function (line3) {
-                                                      var parts3 = line3.split(': ');
-                                                      var header3 = parts3.shift();
-                                                      var value3 = parts3.join(': ');
-                                                      headerMap3[header3] = value3;
-                                                      var status3 = headerMap3["status"];
-                                                      if (status3 != "403") {
+                                      else {
                                                       document.getElementById("links").innerHTML = "<a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
-                                                      }
-                                                      else if(status3 == "403"){
-                                                      document.getElementById("links").innerHTML = "Not Available.";
-                                                      }
-                                                    });
-                                                  }
-                                                }
-                                                
                                       }
                                     });
                                   }
