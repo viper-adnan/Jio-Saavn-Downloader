@@ -4,6 +4,8 @@
 * This Website is nothing without API.
 * Search Songs, Download and Play Online.
 * Added Album URL Detection. :)
+* Fallback to Download MP4 incase of MP3 320kbps not available.
+* Automatic File Rename for Downloads on all Latest Browsers.
 * Fork, Deploy API Site and then change API URL in [_redirects](https://github.com/ParveenBhadooOfficial/Jio-Saavn-Downloader/blob/master/_redirects)
 * [Demo Site](https://jiosaavn.ga)
 * Configured to work with Netlify Only.
