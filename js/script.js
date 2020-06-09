@@ -101,7 +101,7 @@ if (surl == null) {
                       headerMap[header] = value;
                       var status1 = headerMap["status"];
                       if (status1 != "403") {
-                      document.getElementById("links").innerHTML = "<a href='" + dl + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 320kbps</a> <a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
+                      document.getElementById("links").innerHTML = "<a href='" + dl + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 320kbps</a>";
                       }
                       
                       else if (status1 == "403") {
@@ -123,7 +123,7 @@ if (surl == null) {
                                       var value = parts.join(': ');
                                       headerMap[header] = value;
                                       var status2 = headerMap["status"];
-                                      if (status1 == "403" || status2 == "206") {
+                                      if (status1 == "403" || status2 != "403") {
                                       document.getElementById("links").innerHTML = "<a href='" + dl128 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 128kbps</a>";
                                       }
                                       else if (status1 == "403" || status2 == "403"){
@@ -145,7 +145,7 @@ if (surl == null) {
                                                       var value = parts.join(': ');
                                                       headerMap[header] = value;
                                                       var status3 = headerMap["status"];
-                                                      if (status1 == "403" || status2 == "403" || status3 == "206") {
+                                                      if (status1 == "403" || status2 == "403" || status3 != "403") {
                                                       document.getElementById("links").innerHTML = "<a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
                                                       }
                                                       else if (status1 == "403" || status2 == "403" || status3 == "403") {
