@@ -110,7 +110,7 @@ if (surl == null) {
                                 request2.onreadystatechange = function() {
                                   if(this.readyState == this.HEADERS_RECEIVED) {
                                     // Get the raw header string
-                                    var headers2 = request.getAllResponseHeaders();
+                                    var headers2 = request2.getAllResponseHeaders();
                                     // Convert the header string into an array
                                     // of individual headers
                                     var arr2 = headers2.trim().split(/[\r\n]+/);
@@ -132,7 +132,7 @@ if (surl == null) {
                                                 request3.onreadystatechange = function() {
                                                   if(this.readyState == this.HEADERS_RECEIVED) {
                                                     // Get the raw header string
-                                                    var headers3 = request.getAllResponseHeaders();
+                                                    var headers3 = request3.getAllResponseHeaders();
                                                     // Convert the header string into an array
                                                     // of individual headers
                                                     var arr3 = headers3.trim().split(/[\r\n]+/);
