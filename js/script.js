@@ -82,68 +82,68 @@ if (surl == null) {
                 document.getElementById("download").innerHTML = "<table class='table table-striped'> <thead> <tr> <th scope='col'>Name</th> <td>" + t.title + "</td> </tr> </thead> <tbody> <tr> <th scope='row'>Singer</th> <td>" + t.singers + "</td> </tr> <tr> <th scope='row'>Album</th> <td><a href='/album/?url=" + t.album_url + "'>" + t.album + "</a></td> </tr> <tr> <th scope='row'>Language</th> <td>" + t.language + "</td> </tr> <tr> <th scope='row'>Label</th> <td>" + t.label + "</td> </tr> </tbody> </table>"
                 document.getElementById("status").innerHTML = "<img src='" + t.image_url + "' width='250px' height='250px'><br><br><center><audio controls style='width: 100%; max-width:600px;' loop> <source src='" + m + "' type='audio/mp3'> <source src='" + m1 + "' type='audio/mpeg'> <source src='" + n + "' type='audio/mp4'> Your browser does not support the audio element. </audio></center>";
                 var status1 = "";
-                var request = new XMLHttpRequest();
-                request.open("GET", dl, true);
-                request.send();
-                request.onreadystatechange = function() {
+                var request1 = new XMLHttpRequest();
+                request1.open("GET", dl, true);
+                request1.send();
+                request1.onreadystatechange = function() {
                   if(this.readyState == this.HEADERS_RECEIVED) {
                     // Get the raw header string
-                    var headers = request.getAllResponseHeaders();
+                    var headers1 = request1.getAllResponseHeaders();
                     // Convert the header string into an array
                     // of individual headers
-                    var arr = headers.trim().split(/[\r\n]+/);
+                    var arr1 = headers1.trim().split(/[\r\n]+/);
                     // Create a map of header names to values
-                    var headerMap = {};
-                    arr.forEach(function (line) {
-                      var parts = line.split(': ');
-                      var header = parts.shift();
-                      var value = parts.join(': ');
-                      headerMap[header] = value;
-                      var status1 = headerMap["status"];
+                    var headerMap1 = {};
+                    arr1.forEach(function (line1) {
+                      var parts1 = line1.split(': ');
+                      var header1 = parts1.shift();
+                      var value1 = parts1.join(': ');
+                      headerMap1[header1] = value1;
+                      var status1 = headerMap1["status"];
                       if (status1 != "403") {
                       document.getElementById("links").innerHTML = "<a href='" + dl + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 320kbps</a>";
                       }
                       else if (status1 == "403") {
-                                var request = new XMLHttpRequest();
-                                request.open("GET", dl128, true);
-                                request.send();
-                                request.onreadystatechange = function() {
+                                var request2 = new XMLHttpRequest();
+                                request2.open("GET", dl128, true);
+                                request2.send();
+                                request2.onreadystatechange = function() {
                                   if(this.readyState == this.HEADERS_RECEIVED) {
                                     // Get the raw header string
-                                    var headers = request.getAllResponseHeaders();
+                                    var headers2 = request.getAllResponseHeaders();
                                     // Convert the header string into an array
                                     // of individual headers
-                                    var arr = headers.trim().split(/[\r\n]+/);
+                                    var arr2 = headers2.trim().split(/[\r\n]+/);
                                     // Create a map of header names to values
-                                    var headerMap = {};
-                                    arr.forEach(function (line) {
-                                      var parts = line.split(': ');
-                                      var header = parts.shift();
-                                      var value = parts.join(': ');
-                                      headerMap[header] = value;
-                                      var status2 = headerMap["status"];
+                                    var headerMap2 = {};
+                                    arr2.forEach(function (line2) {
+                                      var parts2 = line2.split(': ');
+                                      var header2 = parts2.shift();
+                                      var value2 = parts2.join(': ');
+                                      headerMap2[header2] = value2;
+                                      var status2 = headerMap2["status"];
                                       if (status2 != "403") {
                                       document.getElementById("links").innerHTML = "<a href='" + dl128 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 128kbps</a>";
                                       }
                                       else if (status2 == "403"){
-                                                var request = new XMLHttpRequest();
-                                                request.open("GET", dlmp4, true);
-                                                request.send();
-                                                request.onreadystatechange = function() {
+                                                var request3 = new XMLHttpRequest();
+                                                request3.open("GET", dlmp4, true);
+                                                request3.send();
+                                                request3.onreadystatechange = function() {
                                                   if(this.readyState == this.HEADERS_RECEIVED) {
                                                     // Get the raw header string
-                                                    var headers = request.getAllResponseHeaders();
+                                                    var headers3 = request.getAllResponseHeaders();
                                                     // Convert the header string into an array
                                                     // of individual headers
-                                                    var arr = headers.trim().split(/[\r\n]+/);
+                                                    var arr3 = headers3.trim().split(/[\r\n]+/);
                                                     // Create a map of header names to values
-                                                    var headerMap = {};
-                                                    arr.forEach(function (line) {
-                                                      var parts = line.split(': ');
-                                                      var header = parts.shift();
-                                                      var value = parts.join(': ');
-                                                      headerMap[header] = value;
-                                                      var status3 = headerMap["status"];
+                                                    var headerMap3 = {};
+                                                    ar3r.forEach(function (line3) {
+                                                      var parts3 = line3.split(': ');
+                                                      var header3 = parts3.shift();
+                                                      var value3 = parts3.join(': ');
+                                                      headerMap3[header3] = value;
+                                                      var status3 = headerMap3["status"];
                                                       if (status3 != "403") {
                                                       document.getElementById("links").innerHTML = "<a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
                                                       }
