@@ -138,7 +138,7 @@ if (surl == null) {
                                                     var arr3 = headers3.trim().split(/[\r\n]+/);
                                                     // Create a map of header names to values
                                                     var headerMap3 = {};
-                                                    ar3r.forEach(function (line3) {
+                                                    arr3.forEach(function (line3) {
                                                       var parts3 = line3.split(': ');
                                                       var header3 = parts3.shift();
                                                       var value3 = parts3.join(': ');
