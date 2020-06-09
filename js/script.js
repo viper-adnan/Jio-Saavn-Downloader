@@ -73,7 +73,7 @@ if (surl == null) {
             } else if (e.endsWith(".mp3") === true) {
                 var m = e.replace("http://h.saavncdn.com", "https://h.saavncdn.com");
                 var dl = e.replace("http://h.saavncdn.com", "/mp3");
-                var dlmp4 = e.replace("http://h.saavncdn.com", "/mp4");
+                var dlmp4 = e.replace("http://h.saavncdn.com", "/mp4").replace("_320", "");
                 var m1 = e.replace("http://h.saavncdn.com", "https://h.saavncdn.com").replace("_320", "");
                 var n = e.replace("http://h.saavncdn.com", "https://aac.saavncdn.com").replace('.mp3', '.mp4');
                 document.title = t.title + " By " + t.singers + " - JioSaavn.ga";
