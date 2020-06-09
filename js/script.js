@@ -15,20 +15,25 @@ var surl = getUrlParameter('url');
 if (surl == null) {
     document.getElementById("status").innerHTML = "<h5>Welcome to<br>JioSaavn Downloader</h5><p id='hourly'></p>";
     document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
-    var hour = new Date().getHours();
-    if (hour == "1" || hour == "6" || hour == "12" || hour == "18" || hour == "24") {
-        document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/meri-aashiqui/RV4pdS5obh4'><img src='https://c.saavncdn.com/952/Meri-Aashiqui-Hindi-2020-20200602234001-500x500.jpg' width='250px' height='250px'>";
-    } else if (hour == "2" || hour == "7" || hour == "13" || hour == "19") {
-        document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/wanga-kaaliyan/OzIYCARjQGA'><img src='https://c.saavncdn.com/775/Wanga-Kaaliyan-Hindi-2020-20200525000142-500x500.jpg' width='250px' height='250px'>";
-    } else if (hour == "3" || hour == "8" || hour == "14" || hour == "20") {
-        document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/koi-fariyaad-unplugged/FjpSXDVUdnE'><img src='https://c.saavncdn.com/485/Koi-Fariyaad-Unplugged-Hindi-2020-20200607084001-500x500.jpg' width='250px' height='250px'>";
-    } else if (hour == "4" || hour == "9" || hour == "15" || hour == "21") {
-        document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/tu-hi-yaar-mera-from-pati-patni-aur-woh/JV8HCDpVRHs'><img src='https://c.saavncdn.com/258/Tu-Hi-Yaar-Mera-From-Pati-Patni-Aur-Woh--Hindi-2019-20191202231535-500x500.jpg' width='250px' height='250px'>";
-    } else if (hour == "5" || hour == "10" || hour == "16" || hour == "22") {
-        document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/senorita/I1sPdgJoZFE'><img src='https://c.saavncdn.com/artists/Camila_Cabello_20171208142451_500x500.jpg' width='250px' height='250px'>";
-    } else {
-        document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/love-me-like-you-do-from-fifty-shades-of-grey/AiskdBdfR1w'><img src='https://c.saavncdn.com/566/Love-Me-Like-You-Do-From-Fifty-Shades-Of-Grey-English-2015-500x500.jpg' width='250px' height='250px'>";
-    }
+            var hour = new Date().getHours();
+            if (hour == "1" || hour == "6" || hour == "12" || hour == "18" || hour == "24") {
+            document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/meri-aashiqui/RV4pdS5obh4'><img src='https://c.saavncdn.com/952/Meri-Aashiqui-Hindi-2020-20200602234001-500x500.jpg' width='250px' height='250px'>";
+            }
+            else if (hour == "2" || hour == "7" || hour == "13" || hour == "19") {
+            document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/wanga-kaaliyan/OzIYCARjQGA'><img src='https://c.saavncdn.com/775/Wanga-Kaaliyan-Hindi-2020-20200525000142-500x500.jpg' width='250px' height='250px'>";
+            }
+            else if (hour == "3" || hour == "8" || hour == "14" || hour == "20") {
+            document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/koi-fariyaad-unplugged/FjpSXDVUdnE'><img src='https://c.saavncdn.com/485/Koi-Fariyaad-Unplugged-Hindi-2020-20200607084001-500x500.jpg' width='250px' height='250px'>";
+            }
+            else if (hour == "4" || hour == "9" || hour == "15" || hour == "21") {
+            document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/tu-hi-yaar-mera-from-pati-patni-aur-woh/JV8HCDpVRHs'><img src='https://c.saavncdn.com/258/Tu-Hi-Yaar-Mera-From-Pati-Patni-Aur-Woh--Hindi-2019-20191202231535-500x500.jpg' width='250px' height='250px'>";
+            }
+            else if (hour == "5" || hour == "10" || hour == "16" || hour == "22") {
+            document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/senorita/I1sPdgJoZFE'><img src='https://c.saavncdn.com/artists/Camila_Cabello_20171208142451_500x500.jpg' width='250px' height='250px'>";
+            }
+            else {
+            document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/love-me-like-you-do-from-fifty-shades-of-grey/AiskdBdfR1w'><img src='https://c.saavncdn.com/566/Love-Me-Like-You-Do-From-Fifty-Shades-Of-Grey-English-2015-500x500.jpg' width='250px' height='250px'>";
+            }
 } else if (surl.startsWith("http://www.jiosaavn.com/song/") || surl.startsWith("https://www.jiosaavn.com/song/") || surl.startsWith("http://jiosaavn.com/song/") || surl.startsWith("https://jiosaavn.com/song/") || surl.startsWith("http://saavn.com/song/") || surl.startsWith("https://saavn.com/song/") || surl.startsWith("http://www.saavn.com/song/") || surl.startsWith("https://www.saavn.com/song/")) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -43,26 +48,31 @@ if (surl == null) {
                     document.getElementById("download").innerHTML = "Unable to Download from this Link";
                     document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
                 } else {
-                    document.getElementById("status").innerHTML = "<h5>Welcome to<br>JioSaavn Downloader</h5><p id='hourly'></p>";
-                    document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
-                    var hour = new Date().getHours();
-                    if (hour == "1" || hour == "6" || hour == "12" || hour == "18" || hour == "24") {
-                        document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/meri-aashiqui/RV4pdS5obh4'><img src='https://c.saavncdn.com/952/Meri-Aashiqui-Hindi-2020-20200602234001-500x500.jpg' width='250px' height='250px'>";
-                    } else if (hour == "2" || hour == "7" || hour == "13" || hour == "19") {
-                        document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/wanga-kaaliyan/OzIYCARjQGA'><img src='https://c.saavncdn.com/775/Wanga-Kaaliyan-Hindi-2020-20200525000142-500x500.jpg' width='250px' height='250px'>";
-                    } else if (hour == "3" || hour == "8" || hour == "14" || hour == "20") {
-                        document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/koi-fariyaad-unplugged/FjpSXDVUdnE'><img src='https://c.saavncdn.com/485/Koi-Fariyaad-Unplugged-Hindi-2020-20200607084001-500x500.jpg' width='250px' height='250px'>";
-                    } else if (hour == "4" || hour == "9" || hour == "15" || hour == "21") {
-                        document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/tu-hi-yaar-mera-from-pati-patni-aur-woh/JV8HCDpVRHs'><img src='https://c.saavncdn.com/258/Tu-Hi-Yaar-Mera-From-Pati-Patni-Aur-Woh--Hindi-2019-20191202231535-500x500.jpg' width='250px' height='250px'>";
-                    } else if (hour == "5" || hour == "10" || hour == "16" || hour == "22") {
-                        document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/senorita/I1sPdgJoZFE'><img src='https://c.saavncdn.com/artists/Camila_Cabello_20171208142451_500x500.jpg' width='250px' height='250px'>";
-                    } else {
-                        document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/love-me-like-you-do-from-fifty-shades-of-grey/AiskdBdfR1w'><img src='https://c.saavncdn.com/566/Love-Me-Like-You-Do-From-Fifty-Shades-Of-Grey-English-2015-500x500.jpg' width='250px' height='250px'>";
-                    }
+    document.getElementById("status").innerHTML = "<h5>Welcome to<br>JioSaavn Downloader</h5><p id='hourly'></p>";
+    document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
+            var hour = new Date().getHours();
+            if (hour == "1" || hour == "6" || hour == "12" || hour == "18" || hour == "24") {
+            document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/meri-aashiqui/RV4pdS5obh4'><img src='https://c.saavncdn.com/952/Meri-Aashiqui-Hindi-2020-20200602234001-500x500.jpg' width='250px' height='250px'>";
+            }
+            else if (hour == "2" || hour == "7" || hour == "13" || hour == "19") {
+            document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/wanga-kaaliyan/OzIYCARjQGA'><img src='https://c.saavncdn.com/775/Wanga-Kaaliyan-Hindi-2020-20200525000142-500x500.jpg' width='250px' height='250px'>";
+            }
+            else if (hour == "3" || hour == "8" || hour == "14" || hour == "20") {
+            document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/koi-fariyaad-unplugged/FjpSXDVUdnE'><img src='https://c.saavncdn.com/485/Koi-Fariyaad-Unplugged-Hindi-2020-20200607084001-500x500.jpg' width='250px' height='250px'>";
+            }
+            else if (hour == "4" || hour == "9" || hour == "15" || hour == "21") {
+            document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/tu-hi-yaar-mera-from-pati-patni-aur-woh/JV8HCDpVRHs'><img src='https://c.saavncdn.com/258/Tu-Hi-Yaar-Mera-From-Pati-Patni-Aur-Woh--Hindi-2019-20191202231535-500x500.jpg' width='250px' height='250px'>";
+            }
+            else if (hour == "5" || hour == "10" || hour == "16" || hour == "22") {
+            document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/senorita/I1sPdgJoZFE'><img src='https://c.saavncdn.com/artists/Camila_Cabello_20171208142451_500x500.jpg' width='250px' height='250px'>";
+            }
+            else {
+            document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/love-me-like-you-do-from-fifty-shades-of-grey/AiskdBdfR1w'><img src='https://c.saavncdn.com/566/Love-Me-Like-You-Do-From-Fifty-Shades-Of-Grey-English-2015-500x500.jpg' width='250px' height='250px'>";
+            }
                 }
             } else if (e.endsWith(".mp3") === true) {
                 var m = e.replace("http://h.saavncdn.com", "https://h.saavncdn.com");
-                var dl = e.replace("http://h.saavncdn.com", "/mp3");
+                var dl = e.replace("http://h.saavncdn.com", "/mp3"); 
                 var dl128 = e.replace("http://h.saavncdn.com", "/mp3").replace("_320", "");
                 var dlmp4 = e.replace("http://h.saavncdn.com", "/mp4").replace('.mp3', '.mp4');
                 var m1 = e.replace("http://h.saavncdn.com", "https://h.saavncdn.com").replace("_320", "");
@@ -73,80 +83,83 @@ if (surl == null) {
                 document.getElementById("status").innerHTML = "<img src='" + t.image_url + "' width='250px' height='250px'><br><br><center><audio controls style='width: 100%; max-width:600px;' loop> <source src='" + m + "' type='audio/mp3'> <source src='" + m1 + "' type='audio/mpeg'> <source src='" + n + "' type='audio/mp4'> Your browser does not support the audio element. </audio></center>";
                 var status1 = "";
                 var request = new XMLHttpRequest();
-                request.open("GET", m, true);
+                request.open("GET", dl, true);
                 request.send();
                 request.onreadystatechange = function() {
-                    if (this.readyState == this.HEADERS_RECEIVED) {
-                        // Get the raw header string
-                        var headers = request.getAllResponseHeaders();
-                        // Convert the header string into an array
-                        // of individual headers
-                        var arr = headers.trim().split(/[\r\n]+/);
-                        // Create a map of header names to values
-                        var headerMap = {};
-                        arr.forEach(function(line) {
-                            var parts = line.split(': ');
-                            var header = parts.shift();
-                            var value = parts.join(': ');
-                            headerMap[header] = value;
-                            var status1 = headerMap["status"];
-                            if (status1 == "206" || status1 == "200") {
-                                document.getElementById("links").innerHTML = "<a href='" + dl + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 320kbps</a> <a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
-                            } else if (status1 == "403") {
+                  if(this.readyState == this.HEADERS_RECEIVED) {
+                    // Get the raw header string
+                    var headers = request.getAllResponseHeaders();
+                    // Convert the header string into an array
+                    // of individual headers
+                    var arr = headers.trim().split(/[\r\n]+/);
+                    // Create a map of header names to values
+                    var headerMap = {};
+                    arr.forEach(function (line) {
+                      var parts = line.split(': ');
+                      var header = parts.shift();
+                      var value = parts.join(': ');
+                      headerMap[header] = value;
+                      var status1 = headerMap["status"];
+                      if (status1 == "206" || status1 == "200") {
+                      document.getElementById("links").innerHTML = "<a href='" + dl + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 320kbps</a> <a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
+                      }
+                      
+                      else if (status1 == "403") {
                                 var request = new XMLHttpRequest();
-                                request.open("GET", m1, true);
+                                request.open("GET", dl128, true);
                                 request.send();
                                 request.onreadystatechange = function() {
-                                    if (this.readyState == this.HEADERS_RECEIVED) {
-                                        // Get the raw header string
-                                        var headers = request.getAllResponseHeaders();
-                                        // Convert the header string into an array
-                                        // of individual headers
-                                        var arr = headers.trim().split(/[\r\n]+/);
-                                        // Create a map of header names to values
-                                        var headerMap = {};
-                                        arr.forEach(function(line) {
-                                            var parts = line.split(': ');
-                                            var header = parts.shift();
-                                            var value = parts.join(': ');
-                                            headerMap[header] = value;
-                                            var status2 = headerMap["status"];
-                                            if (status2 == "403") {
-                                                document.getElementById("links").innerHTML = "<a href='" + dl128 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 128kbps</a>";
-                                            } else {
+                                  if(this.readyState == this.HEADERS_RECEIVED) {
+                                    // Get the raw header string
+                                    var headers = request.getAllResponseHeaders();
+                                    // Convert the header string into an array
+                                    // of individual headers
+                                    var arr = headers.trim().split(/[\r\n]+/);
+                                    // Create a map of header names to values
+                                    var headerMap = {};
+                                    arr.forEach(function (line) {
+                                      var parts = line.split(': ');
+                                      var header = parts.shift();
+                                      var value = parts.join(': ');
+                                      headerMap[header] = value;
+                                      var status2 = headerMap["status"];
+                                      if (status2 == "403") {
+                                      document.getElementById("links").innerHTML = "<a href='" + dl128 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 128kbps</a>";
+                                      }
+                                      else {
                                                 var request = new XMLHttpRequest();
-                                                request.open("GET", n, true);
+                                                request.open("GET", dlmp4, true);
                                                 request.send();
                                                 request.onreadystatechange = function() {
-                                                    if (this.readyState == this.HEADERS_RECEIVED) {
-                                                        // Get the raw header string
-                                                        var headers = request.getAllResponseHeaders();
-                                                        // Convert the header string into an array
-                                                        // of individual headers
-                                                        var arr = headers.trim().split(/[\r\n]+/);
-                                                        // Create a map of header names to values
-                                                        var headerMap = {};
-                                                        arr.forEach(function(line) {
-                                                            var parts = line.split(': ');
-                                                            var header = parts.shift();
-                                                            var value = parts.join(': ');
-                                                            headerMap[header] = value;
-                                                            var status3 = headerMap["status"];
-                                                            if (status3 != "403") {
-                                                                document.getElementById("links").innerHTML = "<a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
-                                                            }
-                                                        });
-                                                    }
+                                                  if(this.readyState == this.HEADERS_RECEIVED) {
+                                                    // Get the raw header string
+                                                    var headers = request.getAllResponseHeaders();
+                                                    // Convert the header string into an array
+                                                    // of individual headers
+                                                    var arr = headers.trim().split(/[\r\n]+/);
+                                                    // Create a map of header names to values
+                                                    var headerMap = {};
+                                                    arr.forEach(function (line) {
+                                                      var parts = line.split(': ');
+                                                      var header = parts.shift();
+                                                      var value = parts.join(': ');
+                                                      headerMap[header] = value;
+                                                      var status3 = headerMap["status"];
+                                                      if (status3 != "403") {
+                                                      document.getElementById("links").innerHTML = "<a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.title + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
+                                                      }
+                                                    });
+                                                  }
                                                 }
-
-                                            }
-                                        });
-                                    }
+                                                
+                                      }
+                                    });
+                                  }
                                 }
-
-                            }
-                        });
-                    }
+                                
+                      }
+                    });
+                  }
                 }
 
             }
