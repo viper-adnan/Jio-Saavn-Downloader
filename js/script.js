@@ -128,7 +128,7 @@ if (surl == null) {
                                       }
                                       else {
                                                 var request = new XMLHttpRequest();
-                                                request.open("GET", mp4, true);
+                                                request.open("GET", dlmp4, true);
                                                 request.send();
                                                 request.onreadystatechange = function() {
                                                   if(this.readyState == this.HEADERS_RECEIVED) {
