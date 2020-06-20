@@ -40,13 +40,13 @@ if (surl == null) {
         if (this.readyState == 4 && this.status == 200) {
             var t = JSON.parse(this.responseText);
             var e = t.media_url;
-            oldurl = e.substring(e.indexOf("jio.com") + 7);
-            testurl = oldurl.replace("/", "https://");
+            var oldurl = e.substring(e.indexOf("jio.com") + 7);
+            var testurl = oldurl.replace("/", "https://");
             if (testurl.startsWith("https://aac.saavncdn.com")) {
-                newurl = testurl.replace("aac.saavncdn.com", "h.saavncdn.com").replace(".mp4", ".mp3");
+                var newurl = testurl.replace("aac.saavncdn.com", "h.saavncdn.com").replace(".mp4", ".mp3");
             }
             else if (testurl.startsWith("https://h.saavncdn.com")) {
-                newurl = testurl;
+                var newurl = testurl;
             }
             if (e == null) {
                 document.getElementById("status").innerHTML = "<h5>Please Enter JioSaavn Song Link</h5>";
