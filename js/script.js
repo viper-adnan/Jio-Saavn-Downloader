@@ -41,13 +41,7 @@ if (surl == null) {
             var t = JSON.parse(this.responseText);
             var e = t.media_url;
             var oldurl = e.substring(e.indexOf("jio.com") + 7);
-            var testurl = oldurl.replace("/", "https://");
-            if (testurl.startsWith("https://aac.saavncdn.com")) {
-                var newurl = testurl.replace("aac.saavncdn.com", "h.saavncdn.com").replace(".mp4", ".mp3");
-            }
-            else if (testurl.startsWith("https://h.saavncdn.com")) {
-                var newurl = testurl;
-            }
+            var newurl = oldurl.replace("/", "https://");
             if (e == null) {
                 document.getElementById("status").innerHTML = "<h5>Please Enter JioSaavn Song Link</h5>";
                 document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
@@ -80,15 +74,11 @@ if (surl == null) {
                 }
             } else if (e.endsWith(".mp3") === true) {
                 var m = newurl;
-                var dl = newurl.replace("https://h.saavncdn.com", "/mp3"); 
-                var dl128 = newurl.replace("https://h.saavncdn.com", "/mp3").replace("_320", "");
-                var dlmp4 = newurl.replace("https://h.saavncdn.com", "/mp4").replace('.mp3', '.mp4');
-                var m1 = newurl.replace("_320", "");
-                var n = newurl.replace("https://h.saavncdn.com", "https://aac.saavncdn.com").replace('.mp3', '.mp4');
+                var dl = newurl.replace("https://", "/mp3"); 
                 document.title = t.song + " By " + t.singers + " - JioSaavn.ga";
                 document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' onfocus='this.value=\"\"' value='" + t.song + " By " + t.singers + "' autocomplete='off' required><input type='submit' value='Search'>";
                 document.getElementById("download").innerHTML = "<table class='table table-striped'> <thead> <tr> <th scope='col'>Name</th> <td>" + t.song + "</td> </tr> </thead> <tbody> <tr> <th scope='row'>Singer</th> <td>" + t.singers + "</td> </tr> <tr> <th scope='row'>Album</th> <td><a href='/album/?url=" + t.album_url + "'>" + t.album + "</a></td> </tr> <tr> <th scope='row'>Language</th> <td>" + t.language + "</td> </tr> <tr> <th scope='row'>Label</th> <td>" + t.label + "</td> </tr> </tbody> </table>"
-                document.getElementById("status").innerHTML = "<img src='" + t.image + "' width='250px' height='250px'><br><br><center><audio controls style='width: 100%; max-width:600px;' loop> <source src='" + m + "' type='audio/mp3'> <source src='" + m1 + "' type='audio/mpeg'> <source src='" + n + "' type='audio/mp4'> Your browser does not support the audio element. </audio></center>";
+                document.getElementById("status").innerHTML = "<img src='" + t.image + "' width='250px' height='250px'><br><br><center><audio controls style='width: 100%; max-width:600px;' loop> <source src='" + m + "' type='audio/mp3'> <source src='" + dl + "' type='audio/mp4'> Your browser does not support the audio element. </audio></center>";
                 var status1 = "";
                 var request1 = new XMLHttpRequest();
                 request1.open("GET", dl, true);
@@ -109,39 +99,10 @@ if (surl == null) {
                       headerMap1[header1] = value1;
                       var status1 = headerMap1["status"];
                       if (status1 != "403") {
-                      document.getElementById("links").innerHTML = "<a href='" + dl + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.song + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 320kbps</a>";
+                      document.getElementById("links").innerHTML = "<a href='" + dl + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.song + " By " + t.singers + " From " + t.album + ".mp3'>Download Song</a>";
+                      }  
                       }
-                      else if (status1 == "403") {
-                                var request2 = new XMLHttpRequest();
-                                request2.open("GET", dl128, true);
-                                request2.send();
-                                request2.onreadystatechange = function() {
-                                  if(this.readyState == this.HEADERS_RECEIVED) {
-                                    // Get the raw header string
-                                    var headers2 = request2.getAllResponseHeaders();
-                                    // Convert the header string into an array
-                                    // of individual headers
-                                    var arr2 = headers2.trim().split(/[\r\n]+/);
-                                    // Create a map of header names to values
-                                    var headerMap2 = {};
-                                    arr2.forEach(function (line2) {
-                                      var parts2 = line2.split(': ');
-                                      var header2 = parts2.shift();
-                                      var value2 = parts2.join(': ');
-                                      headerMap2[header2] = value2;
-                                      var status2 = headerMap2["status"];
-                                      if (status2 != "403") {
-                                      document.getElementById("links").innerHTML = "<a href='" + dl128 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.song + " By " + t.singers + " From " + t.album + ".mp3'>Download MP3 128kbps</a>";
-                                      }
-                                      else {
-                                                      document.getElementById("links").innerHTML = "<a href='" + dlmp4 + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.song + " By " + t.singers + " From " + t.album + ".mp4'>Download MP4 320kbps</a>";
-                                      }
-                                    });
-                                  }
-                                }
-                                
-                      }
-                    });
+                    );
                   }
                 }
 
