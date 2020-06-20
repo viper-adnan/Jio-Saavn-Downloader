@@ -72,7 +72,7 @@ if (surl == null) {
             document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/love-me-like-you-do-from-fifty-shades-of-grey/AiskdBdfR1w'><img src='https://c.saavncdn.com/566/Love-Me-Like-You-Do-From-Fifty-Shades-Of-Grey-English-2015-500x500.jpg' width='250px' height='250px'>";
             }
                 }
-            } else if (e.endsWith(".mp3") === true) {
+            } else if (e.endsWith(".mp3") === true || e.endsWith(".mp4") === true) {
                 var m = newurl;
                 var dl = newurl.replace("https://", "/mp3/"); 
                 document.title = t.song + " By " + t.singers + " - JioSaavn.ga";
