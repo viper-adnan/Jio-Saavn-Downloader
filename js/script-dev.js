@@ -74,7 +74,7 @@ if (surl == null) {
                 }
             } else if (e.endsWith(".mp3") === true || e.endsWith(".mp4") === true) {
                 var m = newurl;
-                var dl = newurl.replace("https://", "/mp3/"); 
+                var dl = newurl.replace("https://", "/cdn.jiosaavn.ga/"); 
                 document.title = t.song + " By " + t.singers + " - JioSaavn.ga";
                 document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' onfocus='this.value=\"\"' value='" + t.song + " By " + t.singers + "' autocomplete='off' required><input type='submit' value='Search'>";
                 document.getElementById("download").innerHTML = "<table class='table table-striped'> <thead> <tr> <th scope='col'>Name</th> <td>" + t.song + "</td> </tr> </thead> <tbody> <tr> <th scope='row'>Singer</th> <td>" + t.singers + "</td> </tr> <tr> <th scope='row'>Album</th> <td><a href='/album/?url=" + t.album_url + "'>" + t.album + "</a></td> </tr> <tr> <th scope='row'>Language</th> <td>" + t.language + "</td> </tr> <tr> <th scope='row'>Label</th> <td>" + t.label + "</td> </tr> </tbody> </table>"
