@@ -41,7 +41,13 @@ if (surl == null) {
             var t = JSON.parse(this.responseText);
             var e = t.media_url;
             oldurl = e.substring(e.indexOf("jio.com") + 7);
-            newurl = oldurl.replace("/", "https://");
+            testurl = oldurl.replace("/", "https://");
+            if (testurl.startsWith("https://aac.saavncdn.com")) {
+                newurl = testurl.replace("aac.saavncdn.com", "h.saavncdn.com").replace(".mp4", ".mp3");
+            }
+            else if (testurl.startsWith("https://h.saavncdn.com")) {
+                newurl = testurl;
+            }
             if (e == null) {
                 document.getElementById("status").innerHTML = "<h5>Please Enter JioSaavn Song Link</h5>";
                 document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
