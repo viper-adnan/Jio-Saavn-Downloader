@@ -41,7 +41,13 @@ if (surl == null) {
             var t = JSON.parse(this.responseText);
             var e = t.media_url;
             oldurl = e.substring(e.indexOf("jio.com") + 7);
-            newurl = oldurl.replace("/", "https://");
+            testurl = oldurl.replace("/", "https://");
+            if (testurl.startsWith("https://aac.saavncdn.com")) {
+                newurl = testurl.replace("aac.saavncdn.com", "h.saavncdn.com").replace(".mp4", ".mp3");
+            }
+            else if (testurl.startsWith("https://h.saavncdn.com")) {
+                newurl = testurl;
+            }
             if (e == null) {
                 document.getElementById("status").innerHTML = "<h5>Please Enter JioSaavn Song Link</h5>";
                 document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
@@ -76,9 +82,9 @@ if (surl == null) {
                 var m = newurl;
                 var dl = newurl.replace("https://h.saavncdn.com", "/mp3"); 
                 var dl128 = newurl.replace("https://h.saavncdn.com", "/mp3").replace("_320", "");
-                var dlmp4 = newurl.replace("https://aac.saavncdn.com", "/mp4");
+                var dlmp4 = newurl.replace("https://h.saavncdn.com", "/mp4").replace('.mp3', '.mp4');
                 var m1 = newurl.replace("_320", "");
-                var n = newurl;
+                var n = newurl.replace("https://h.saavncdn.com", "https://aac.saavncdn.com").replace('.mp3', '.mp4');
                 document.title = t.song + " By " + t.singers + " - JioSaavn.ga";
                 document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' onfocus='this.value=\"\"' value='" + t.song + " By " + t.singers + "' autocomplete='off' required><input type='submit' value='Search'>";
                 document.getElementById("download").innerHTML = "<table class='table table-striped'> <thead> <tr> <th scope='col'>Name</th> <td>" + t.song + "</td> </tr> </thead> <tbody> <tr> <th scope='row'>Singer</th> <td>" + t.singers + "</td> </tr> <tr> <th scope='row'>Album</th> <td><a href='/album/?url=" + t.album_url + "'>" + t.album + "</a></td> </tr> <tr> <th scope='row'>Language</th> <td>" + t.language + "</td> </tr> <tr> <th scope='row'>Label</th> <td>" + t.label + "</td> </tr> </tbody> </table>"
