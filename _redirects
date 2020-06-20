@@ -1,4 +1,4 @@
 /api/*  https://jiosaavnapi.bhadoo.uk/result/:splat  200
-/mp3/*  https://sgdccdnems01.cdnsrv.jio.com/h.saavncdn.com/:splat  200
-/mp4/*  https://sgdccdnems02.cdnsrv.jio.com/aac.saavncdn.com/:splat  200
+/mp3/*  https://sgdccdnems01.cdnsrv.jio.com/:splat  200
+/mp4/*  https://sgdccdnems02.cdnsrv.jio.com/:splat  200
 https://jiosaavn.netlify.app/* https://jiosaavn.ga/:splat  301!
