@@ -13,7 +13,7 @@
 
 ## Configured by
 
-* TheFirstSpeedster (https://l.telegram.ind.in/TheFirstSpeedster)
+* [TheFirstSpeedster](https://l.telegram.ind.in/TheFirstSpeedster)
 
 ## Hosted By GitHub and Deployed by Netlify
 
