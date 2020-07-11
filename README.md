@@ -9,6 +9,7 @@
 * Fork, Deploy API Site and then change API URL in [_redirects](https://github.com/ParveenBhadooOfficial/Jio-Saavn-Downloader/blob/master/_redirects)
 * [Demo Site](https://jiosaavn.ga)
 * Configured to work with Netlify Only.
+* [Code of Conduct](https://github.com/ParveenBhadooOfficial/Jio-Saavn-Downloader/blob/master/CODE_OF_CONDUCT.md)
 
 ## Configured by
 
