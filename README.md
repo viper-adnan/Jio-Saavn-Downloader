@@ -9,3 +9,11 @@
 * Fork, Deploy API Site and then change API URL in [_redirects](https://github.com/ParveenBhadooOfficial/Jio-Saavn-Downloader/blob/master/_redirects)
 * [Demo Site](https://jiosaavn.ga)
 * Configured to work with Netlify Only.
+
+## Configured by
+
+* TheFirstSpeedster (https://l.telegram.ind.in/TheFirstSpeedster)
+
+## Hosted By GitHub and Deployed by Netlify
+
+[![https://www.netlify.com/img/global/badges/netlify-color-bg.svg](https://www.netlify.com/img/global/badges/netlify-color-bg.svg)](https://www.netlify.com)
