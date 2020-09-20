@@ -13,7 +13,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 var surl = getUrlParameter('url');
 if (surl == null) {
-    document.getElementById("status").innerHTML = "<h2 style='color: white;'>Music Downloader</h2><p id='hourly'></p>";
+    document.getElementById("status").innerHTML = "<h2 style='color: white;'>Musically</h2><p id='hourly' style='color: white;'><i>A next generation song downloader.</i></p>";
     document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
             var hour = new Date().getHours();
             if (hour == "1" || hour == "6" || hour == "12" || hour == "18" || hour == "24") {
@@ -50,7 +50,7 @@ if (surl == null) {
                     document.getElementById("download").innerHTML = "Unable to Download from this Link";
                     document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
                 } else {
-    document.getElementById("status").innerHTML = "<h2 style='color: white;'>Music Downloader</h2><p id='hourly'></p>";
+    document.getElementById("status").innerHTML = "<h2 style='color: white;'>Musically</h2><p id='hourly' style='color: white;'><i>A next generation song downloader.</i></p>";
     document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
             var hour = new Date().getHours();
             if (hour == "1" || hour == "6" || hour == "12" || hour == "18" || hour == "24") {
@@ -77,7 +77,7 @@ if (surl == null) {
                 var dl = newurl.replace("https://", "/cdn.jiosaavn.ga/"); 
                 document.title = t.song + " By " + t.singers + " - JioSaavn.ga";
                 document.getElementById("links").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' onfocus='this.value=\"\"' value='" + t.song + " By " + t.singers + "' autocomplete='off' required><input type='submit' value='Search'>";
-                document.getElementById("download").innerHTML = "<table class='table table-striped'> <thead> <tr> <th scope='col'>Name</th> <td>" + t.song + "</td> </tr> </thead> <tbody> <tr> <th scope='row'>Singer</th> <td>" + t.singers + "</td> </tr> <tr> <th scope='row'>Album</th> <td><a href='/album/?url=" + t.album_url + "'>" + t.album + "</a></td> </tr> <tr> <th scope='row'>Language</th> <td>" + t.language + "</td> </tr> <tr> <th scope='row'>Label</th> <td>" + t.label + "</td> </tr> </tbody> </table>"
+                document.getElementById("download").innerHTML = "<table class='table table-striped'> <thead> <tr> <th scope='col' style='color: white;'>Name</th> <td style='color: white;'>" + t.song + "</td> </tr> </thead> <tbody> <tr> <th scope='row' style='color: white;'>Singer</th> <td style='color: white;'>" + t.singers + "</td> </tr> <tr> <th scope='row' style='color: white;'>Album</th> <td style='color: white;'><a href='/album/?url=" + t.album_url + "'>" + t.album + "</a></td> </tr> <tr> <th scope='row' style='color: white;'>Language</th> <td style='color: white;'>" + t.language + "</td> </tr> <tr> <th scope='row' style='color: white;'>Label</th> <td style='color: white;'>" + t.label + "</td> </tr> </tbody> </table>"
                 document.getElementById("status").innerHTML = "<img src='" + t.image + "' width='250px' height='250px'><br><br><center><audio controls style='width: 100%; max-width:600px;' loop> <source src='" + m + "' type='audio/mp3'> <source src='" + dl + "' type='audio/mp4'> Your browser does not support the audio element. </audio></center>";
                 var status1 = "";
                 var request1 = new XMLHttpRequest();
@@ -99,7 +99,7 @@ if (surl == null) {
                       headerMap1[header1] = value1;
                       var status1 = headerMap1["status"];
                       if (status1 != "403") {
-                      document.getElementById("input").innerHTML = "<a href='" + dl + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.song + " By " + t.singers + " From " + t.album + ".mp3'>Download Song</a>";
+                      document.getElementById("input").innerHTML = "<a href='" + dl + "' class='button7' style='background-color:#2979FF' target='_self' download='" + t.song + ".mp3'>Download Song</a>";
                       }  
                       }
                     );
