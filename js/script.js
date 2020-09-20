@@ -132,7 +132,7 @@ if (surl == null) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
-            txt += "<table class='table table-striped table-bordered'><caption style='caption-side:top;word-break:break-all;'>Results for : " + fsurl + "</caption><thead><tr><th scope='col'>Name</th><th scope='col'>Album</th></tr></thead><tbody>"
+            txt += "<table class='table table-striped table-bordered'><caption style='caption-side:top;word-break:break-all;'>Results for : " + fsurl + "</caption><thead><tr><th scope='col' style='color: white;'>Name</th><th scope='col' style='color: white;'>Album</th></tr></thead><tbody>"
             for (x in myObj) {
                 txt += "<tr><td><a href='/?url=" + myObj[x].perma_url + "'>" + myObj[x].song + " By " + myObj[x].singers + "</a></td><td><a href='/?url=" + myObj[x].album_url + "'>" + myObj[x].album + "</td></tr>";
             }
