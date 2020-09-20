@@ -13,7 +13,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 var surl = getUrlParameter('url');
 if (surl == null) {
-    document.getElementById("status").innerHTML = "<h2 style="color: white;">Music Downloader</h2><p id='hourly'></p>";
+    document.getElementById("status").innerHTML = "<h2 style='color: white;'>Music Downloader</h2><p id='hourly'></p>";
     document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
             var hour = new Date().getHours();
             if (hour == "1" || hour == "6" || hour == "12" || hour == "18" || hour == "24") {
@@ -50,7 +50,7 @@ if (surl == null) {
                     document.getElementById("download").innerHTML = "Unable to Download from this Link";
                     document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
                 } else {
-    document.getElementById("status").innerHTML = "<h2 style="color: white;">Music Downloader</h2><p id='hourly'></p>";
+    document.getElementById("status").innerHTML = "<h2 style='color: white;'>Music Downloader</h2><p id='hourly'></p>";
     document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
             var hour = new Date().getHours();
             if (hour == "1" || hour == "6" || hour == "12" || hour == "18" || hour == "24") {
