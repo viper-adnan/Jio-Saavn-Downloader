@@ -42,8 +42,8 @@ if (surl == null) {
     xmlhttp.send();
 } else {
     document.title = "Failed - JioSaavn.ga";
-    document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
     document.getElementById("status").innerHTML = "Either Album Link is wrong or We're unable to fetch these details.";
+    document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
 
 }
 function switchfunc() {
