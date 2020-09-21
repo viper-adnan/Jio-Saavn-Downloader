@@ -11,10 +11,11 @@ select {
 }
 
 input[type=submit] {
+    text-align: center;
     width: 20%;
     background-color: #4caf50;
     color: #fff;
-    padding: 14px 20px;
+    padding: 12px 20px;
     margin: 8px 0;
     border: none;
     border-radius: 0 10px 10px 0;
