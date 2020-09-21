@@ -36,8 +36,7 @@ input[type=submit]:hover {
 
 a.button7 {
     display: inline-block;
-    padding: .7em 1.7em;
-    margin: 0 0 10px 0;
+    padding: 0 0 10px 0;
     border-radius: 10px;
     box-sizing: border-box;
     text-decoration: none;
