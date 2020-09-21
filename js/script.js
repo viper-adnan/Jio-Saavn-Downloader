@@ -74,7 +74,7 @@ if (surl == null) {
                 }
             } else if (e.endsWith(".mp3") === true || e.endsWith(".mp4") === true) {
                 var m = newurl;
-                var dl = newurl.replace("https://", "/cdn.jiosaavn.ga/"); 
+                var dl = newurl.replace("https://", "/cdn.musically.cf/"); 
                 document.title = t.song + " - Musically";
                 document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' onfocus='this.value=\"\"' value='" + t.song + "' autocomplete='off' required><input type='submit' value='&#128269;'>";
                 document.getElementById("download").innerHTML = "<table class='table table-striped'> <thead> <tr> <th scope='col' style='color: white;'>Name</th> <td style='color: white;'>" + t.song + "</td> </tr> </thead> <tbody> <tr> <th scope='row' style='color: white;'>Singer</th> <td style='color: white;'>" + t.singers + "</td> </tr> <tr> <th scope='row' style='color: white;'>Album</th> <td style='color: white;'><a href='/album/?url=" + t.album_url + "'>" + t.album + "</a></td> </tr> <tr> <th scope='row' style='color: white;'>Language</th> <td style='color: white;'>" + t.language + "</td> </tr> <tr> <th scope='row' style='color: white;'>Label</th> <td style='color: white;'>" + t.label + "</td> </tr> </tbody> </table>"
