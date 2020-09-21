@@ -6,7 +6,7 @@ select {
     float: left;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 10px 0 10px 0;
+    border-radius: 10px 0 0 10px;
     box-sizing: border-box;
 }
 
@@ -17,7 +17,7 @@ input[type=submit] {
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 0 10px 0 10px;
+    border-radius: 0 10px 10px 0;
     cursor: pointer;
     float: left;
 }
