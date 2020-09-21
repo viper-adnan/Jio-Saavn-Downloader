@@ -55,7 +55,7 @@ a.button7:active {
 }
 
 body {
-  animation: colorchange 10s infinite; 
+  animation: colorchange 60s infinite; 
 }
 
 @keyframes colorchange
