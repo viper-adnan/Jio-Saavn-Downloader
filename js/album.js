@@ -31,7 +31,7 @@ if (surl == null) {
             txt += "</tbody></table>"
             imagessl = al.songs[0].image.replace("http://", "https://");
             document.title = al.name + " - Musically";
-            document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
+            document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='&#128269;'>";
             document.getElementById("download").innerHTML = txt;
             document.getElementById("status").innerHTML = "<img src='" + imagessl + "' width='250px' height='250px'>";
         } else {
@@ -43,7 +43,7 @@ if (surl == null) {
 } else {
     document.title = "Failed - Musically";
     document.getElementById("status").innerHTML = "Either Album Link is wrong or We're unable to fetch these details.";
-    document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
+    document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='&#128269;'>";
 
 }
 function switchfunc() {
