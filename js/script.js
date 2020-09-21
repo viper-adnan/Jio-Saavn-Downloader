@@ -14,7 +14,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 var surl = getUrlParameter('url');
 if (surl == null) {
     document.getElementById("status").innerHTML = "<h2 style='color: white;'>Musically</h2><p style='color: white;'><i>A next generation song downloader.</i></p><p id='hourly'></p>";
-    document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
+    document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='&#128269;'>";
             var hour = new Date().getHours();
             if (hour == "1" || hour == "6" || hour == "12" || hour == "18" || hour == "24") {
             document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/meri-aashiqui/RV4pdS5obh4'><img src='https://c.saavncdn.com/952/Meri-Aashiqui-Hindi-2020-20200602234001-500x500.jpg' width='250px' height='250px' style='border-radius: 10px;'>";
@@ -44,14 +44,14 @@ if (surl == null) {
             var newurl = oldurl.replace("/", "https://");
             if (e == null) {
                 document.getElementById("status").innerHTML = "<h5>Please Enter JioSaavn Song Link</h5>";
-                document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
+                document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='&#128269;'>";
                 if (surl != null) {
                     document.title = "Failed - JioSaavn.ga";
                     document.getElementById("download").innerHTML = "Unable to Download from this Link";
-                    document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
+                    document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='&#128269;'>";
                 } else {
     document.getElementById("status").innerHTML = "<h2 style='color: white;'>Musically</h2><p style='color: white;'><i>A next generation song downloader.</i></p><p id='hourly'></p>";
-    document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
+    document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='&#128269;'>";
             var hour = new Date().getHours();
             if (hour == "1" || hour == "6" || hour == "12" || hour == "18" || hour == "24") {
             document.getElementById("hourly").innerHTML = "<a href='/?url=https://www.jiosaavn.com/song/meri-aashiqui/RV4pdS5obh4'><img src='https://c.saavncdn.com/952/Meri-Aashiqui-Hindi-2020-20200602234001-500x500.jpg' width='250px' height='250px' style='border-radius: 10px;'>";
@@ -76,7 +76,7 @@ if (surl == null) {
                 var m = newurl;
                 var dl = newurl.replace("https://", "/cdn.jiosaavn.ga/"); 
                 document.title = t.song + " By " + t.singers + " - JioSaavn.ga";
-                document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' onfocus='this.value=\"\"' value='" + t.song + " By " + t.singers + "' autocomplete='off' required><input type='submit' value='Search' style='float:left;'>";
+                document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' onfocus='this.value=\"\"' value='" + t.song + " By " + t.singers + "' autocomplete='off' required><input type='submit' value='&#128269;'>";
                 document.getElementById("download").innerHTML = "<table class='table table-striped'> <thead> <tr> <th scope='col' style='color: white;'>Name</th> <td style='color: white;'>" + t.song + "</td> </tr> </thead> <tbody> <tr> <th scope='row' style='color: white;'>Singer</th> <td style='color: white;'>" + t.singers + "</td> </tr> <tr> <th scope='row' style='color: white;'>Album</th> <td style='color: white;'><a href='/album/?url=" + t.album_url + "'>" + t.album + "</a></td> </tr> <tr> <th scope='row' style='color: white;'>Language</th> <td style='color: white;'>" + t.language + "</td> </tr> <tr> <th scope='row' style='color: white;'>Label</th> <td style='color: white;'>" + t.label + "</td> </tr> </tbody> </table>"
                 document.getElementById("status").innerHTML = "<img src='" + t.image + "' width='250px' height='250px' style='border-radius: 10px;'><br><br><center><audio controls style='width: 100%; max-width:600px;' loop> <source src='" + m + "' type='audio/mp3'> <source src='" + dl + "' type='audio/mp4'> Your browser does not support the audio element. </audio></center>";
                 var status1 = "";
@@ -138,7 +138,7 @@ if (surl == null) {
             }
             txt += "</tbody></table>"
             document.title = "Albums - JioSaavn.ga";
-            document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' onfocus='this.value=\"\"' value='" + fsurl + "' autocomplete='off' required><input type='submit' value='Search'>";
+            document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' onfocus='this.value=\"\"' value='" + fsurl + "' autocomplete='off' required><input type='submit' value='&#128269;'>";
             document.getElementById("download").innerHTML = txt;
             document.getElementById("status").innerHTML = "";
         } else if (this.readyState == 4 && this.status !== 200) {
