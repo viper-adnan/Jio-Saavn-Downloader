@@ -57,6 +57,7 @@ a.button7:active {
     color: white;
     margin: auto;
     font-size: 12px;
+    text-align: center;
     opacity: 0.5;
 }
 body {
