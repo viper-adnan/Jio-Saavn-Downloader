@@ -30,6 +30,10 @@ input[type=submit]:hover {
     display: none;
 }
 
+.logoImage {
+       background-image: url('images/logo.png');
+ }
+
 .center {
     text-align: center;
     padding: 0 0 4px 0;
