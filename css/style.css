@@ -54,6 +54,18 @@ a.button7:active {
     box-shadow: inset 0 .6em 2em -.3em rgba(0, 0, 0, .15), inset 0 0 0 .05em rgba(255, 255, 255, .12);
 }
 
+body {
+  animation: colorchange 10s infinite; 
+}
+
+@keyframes colorchange
+{
+  0%   {background: red;}
+  25%  {background: yellow;}
+  50%  {background: blue;}
+  75%  {background: green;}
+  100% {background: red;}
+}
 @media all and (max-width:30em) {
     a.button7 {
         display: block;
