@@ -39,9 +39,6 @@ input[type=submit]:hover {
     color: #989898;
     text-align: center;
     margin: 0;
-    position: fixed;
-    left: 50%;
-    bottom: 10px;
 }
 a.button7 {
     display: inline-block;
