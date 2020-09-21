@@ -46,7 +46,7 @@ if (surl == null) {
                 document.getElementById("status").innerHTML = "<h5>Please Enter JioSaavn Song Link</h5>";
                 document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='&#128269;'>";
                 if (surl != null) {
-                    document.title = "Failed - JioSaavn.ga";
+                    document.title = "Failed - Musically";
                     document.getElementById("download").innerHTML = "Unable to Download from this Link";
                     document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='&#128269;'>";
                 } else {
@@ -75,8 +75,8 @@ if (surl == null) {
             } else if (e.endsWith(".mp3") === true || e.endsWith(".mp4") === true) {
                 var m = newurl;
                 var dl = newurl.replace("https://", "/cdn.jiosaavn.ga/"); 
-                document.title = t.song + " By " + t.singers + " - Musically";
-                document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' onfocus='this.value=\"\"' value='" + t.song + " By " + t.singers + "' autocomplete='off' required><input type='submit' value='&#128269;'>";
+                document.title = t.song + " - Musically";
+                document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' onfocus='this.value=\"\"' value='" + t.song + "' autocomplete='off' required><input type='submit' value='&#128269;'>";
                 document.getElementById("download").innerHTML = "<table class='table table-striped'> <thead> <tr> <th scope='col' style='color: white;'>Name</th> <td style='color: white;'>" + t.song + "</td> </tr> </thead> <tbody> <tr> <th scope='row' style='color: white;'>Singer</th> <td style='color: white;'>" + t.singers + "</td> </tr> <tr> <th scope='row' style='color: white;'>Album</th> <td style='color: white;'><a href='/album/?url=" + t.album_url + "'>" + t.album + "</a></td> </tr> <tr> <th scope='row' style='color: white;'>Language</th> <td style='color: white;'>" + t.language + "</td> </tr> <tr> <th scope='row' style='color: white;'>Label</th> <td style='color: white;'>" + t.label + "</td> </tr> </tbody> </table>"
                 document.getElementById("status").innerHTML = "<img src='" + t.image + "' width='250px' height='250px' style='border-radius: 15px;'><br><h3 style='color:white;'>" + t.song + "</h3><center><audio controls style='width: 100%; max-width:600px;' loop> <source src='" + m + "' type='audio/mp3'> <source src='" + dl + "' type='audio/mp4'> Your browser does not support the audio element. </audio></center>";
                 var status1 = "";
@@ -108,10 +108,10 @@ if (surl == null) {
 
             }
         } else if (this.readyState == 4 && this.status !== 200) {
-            document.title = "Server Offline - JioSaavn.ga";
+            document.title = "Server Offline - Musically";
             document.getElementById("status").innerHTML = "<button type='button' class='btn btn-danger' disabled>Web Server Offline</button>";
         } else {
-            document.title = "Processing - JioSaavn.ga";
+            document.title = "Processing - Musically";
             document.getElementById("status").innerHTML = "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='margin:auto;display:block;' width='150px' height='150px' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid'> <g transform='translate(50,50)'><circle cx='0' cy='0' r='8.333333333333334' fill='none' stroke='#e15b64' stroke-width='3.9000000000000004' stroke-dasharray='26.179938779914945 26.179938779914945' transform='rotate(-217.309)'> <animateTransform attributeName='transform' type='rotate' values='0 0 0;-360 0 0' times='0;1' dur='1.36986301369863s' calcMode='spline' keySplines='0.2 0 0.8 1' begin='0' repeatCount='indefinite'></animateTransform> </circle><circle cx='0' cy='0' r='16.666666666666668' fill='none' stroke='#f47e60' stroke-width='3.9000000000000004' stroke-dasharray='52.35987755982989 52.35987755982989' transform='rotate(302.078)'> <animateTransform attributeName='transform' type='rotate' values='0 0 0;360 0 0' times='0;1' dur='1.36986301369863s' calcMode='spline' keySplines='0.2 0 0.8 1' begin='-0.273972602739726' repeatCount='indefinite'></animateTransform> </circle><circle cx='0' cy='0' r='25' fill='none' stroke='#f8b26a' stroke-width='3.9000000000000004' stroke-dasharray='78.53981633974483 78.53981633974483' transform='rotate(-359.247)'> <animateTransform attributeName='transform' type='rotate' values='0 0 0;-360 0 0' times='0;1' dur='1.36986301369863s' calcMode='spline' keySplines='0.2 0 0.8 1' begin='-0.547945205479452' repeatCount='indefinite'></animateTransform> </circle><circle cx='0' cy='0' r='33.333333333333336' fill='none' stroke='#abbd81' stroke-width='3.9000000000000004' stroke-dasharray='104.71975511965978 104.71975511965978' transform='rotate(45.1985)'> <animateTransform attributeName='transform' type='rotate' values='0 0 0;360 0 0' times='0;1' dur='1.36986301369863s' calcMode='spline' keySplines='0.2 0 0.8 1' begin='-0.821917808219178' repeatCount='indefinite'></animateTransform> </circle><circle cx='0' cy='0' r='41.666666666666664' fill='none' stroke='#849b87' stroke-width='3.9000000000000004' stroke-dasharray='130.89969389957471 130.89969389957471' transform='rotate(-127.769)'> <animateTransform attributeName='transform' type='rotate' values='0 0 0;-360 0 0' times='0;1' dur='1.36986301369863s' calcMode='spline' keySplines='0.2 0 0.8 1' begin='-1.095890410958904' repeatCount='indefinite'></animateTransform> </circle></g> </svg>";
         }
 
@@ -137,15 +137,15 @@ if (surl == null) {
                 txt += "<tr><td><a href='/?url=" + myObj[x].perma_url + "'>" + myObj[x].song + " By " + myObj[x].singers + "</a></td><td><a href='/?url=" + myObj[x].album_url + "'>" + myObj[x].album + "</td></tr>";
             }
             txt += "</tbody></table>"
-            document.title = "Albums - JioSaavn.ga";
+            document.title = "Albums - Musically";
             document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' onfocus='this.value=\"\"' value='" + fsurl + "' autocomplete='off' required><input type='submit' value='&#128269;'>";
             document.getElementById("download").innerHTML = txt;
             document.getElementById("status").innerHTML = "";
         } else if (this.readyState == 4 && this.status !== 200) {
-            document.title = "Server Offline - JioSaavn.ga";
+            document.title = "Server Offline - Musically";
             document.getElementById("status").innerHTML = "<button type='button' class='btn btn-danger' disabled>Web Server Offline</button>";
         } else {
-            document.title = "Processing - JioSaavn.ga";
+            document.title = "Processing - Musically";
             document.getElementById("status").innerHTML = "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='margin:auto;display:block;' width='150px' height='150px' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid'> <g transform='translate(50,50)'><circle cx='0' cy='0' r='8.333333333333334' fill='none' stroke='#e15b64' stroke-width='3.9000000000000004' stroke-dasharray='26.179938779914945 26.179938779914945' transform='rotate(-217.309)'> <animateTransform attributeName='transform' type='rotate' values='0 0 0;-360 0 0' times='0;1' dur='1.36986301369863s' calcMode='spline' keySplines='0.2 0 0.8 1' begin='0' repeatCount='indefinite'></animateTransform> </circle><circle cx='0' cy='0' r='16.666666666666668' fill='none' stroke='#f47e60' stroke-width='3.9000000000000004' stroke-dasharray='52.35987755982989 52.35987755982989' transform='rotate(302.078)'> <animateTransform attributeName='transform' type='rotate' values='0 0 0;360 0 0' times='0;1' dur='1.36986301369863s' calcMode='spline' keySplines='0.2 0 0.8 1' begin='-0.273972602739726' repeatCount='indefinite'></animateTransform> </circle><circle cx='0' cy='0' r='25' fill='none' stroke='#f8b26a' stroke-width='3.9000000000000004' stroke-dasharray='78.53981633974483 78.53981633974483' transform='rotate(-359.247)'> <animateTransform attributeName='transform' type='rotate' values='0 0 0;-360 0 0' times='0;1' dur='1.36986301369863s' calcMode='spline' keySplines='0.2 0 0.8 1' begin='-0.547945205479452' repeatCount='indefinite'></animateTransform> </circle><circle cx='0' cy='0' r='33.333333333333336' fill='none' stroke='#abbd81' stroke-width='3.9000000000000004' stroke-dasharray='104.71975511965978 104.71975511965978' transform='rotate(45.1985)'> <animateTransform attributeName='transform' type='rotate' values='0 0 0;360 0 0' times='0;1' dur='1.36986301369863s' calcMode='spline' keySplines='0.2 0 0.8 1' begin='-0.821917808219178' repeatCount='indefinite'></animateTransform> </circle><circle cx='0' cy='0' r='41.666666666666664' fill='none' stroke='#849b87' stroke-width='3.9000000000000004' stroke-dasharray='130.89969389957471 130.89969389957471' transform='rotate(-127.769)'> <animateTransform attributeName='transform' type='rotate' values='0 0 0;-360 0 0' times='0;1' dur='1.36986301369863s' calcMode='spline' keySplines='0.2 0 0.8 1' begin='-1.095890410958904' repeatCount='indefinite'></animateTransform> </circle></g> </svg>";
         }
     };
