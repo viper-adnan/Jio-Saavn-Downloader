@@ -14,7 +14,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 var surl = getUrlParameter('url');
 
 if (surl == null) {
-    document.title = "Redirecting - JioSaavn.ga";
+    document.title = "Redirecting - Musically";
     location.href= "/";
 } else if (surl.startsWith("https://www.jiosaavn.com/album/")) {
     var obj, xmlhttp, al, songs, x, txt = "";
@@ -30,7 +30,7 @@ if (surl == null) {
             }
             txt += "</tbody></table>"
             imagessl = al.songs[0].image.replace("http://", "https://");
-            document.title = al.name + " - JioSaavn.ga";
+            document.title = al.name + " - Musically";
             document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
             document.getElementById("download").innerHTML = txt;
             document.getElementById("status").innerHTML = "<img src='" + imagessl + "' width='250px' height='250px'>";
@@ -41,7 +41,7 @@ if (surl == null) {
     xmlhttp.open("GET", "https://jiosaavn.netlify.app/api/?query=" + surl, true);
     xmlhttp.send();
 } else {
-    document.title = "Failed - JioSaavn.ga";
+    document.title = "Failed - Musically";
     document.getElementById("status").innerHTML = "Either Album Link is wrong or We're unable to fetch these details.";
     document.getElementById("input").innerHTML = "<input type='text' id='srcid' name='url' placeholder='Enter Song Name or JioSaavn Link' value='' autocomplete='off' required><input type='submit' value='Search'>";
 
