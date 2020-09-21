@@ -1,3 +1,11 @@
+.watermark {
+    color: white;
+    margin: auto;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0.6;
+}
+
 input[type=text],
 select {
     width: 80%;
@@ -53,13 +61,7 @@ a.button7 {
 a.button7:active {
     box-shadow: inset 0 .6em 2em -.3em rgba(0, 0, 0, .15), inset 0 0 0 .05em rgba(255, 255, 255, .12);
 }
-#watermark {
-    color: white;
-    margin: auto;
-    font-size: 12px;
-    text-align: center;
-    opacity: 0.6;
-}
+
 body {
     background-color: #1B1B1B;
 }
