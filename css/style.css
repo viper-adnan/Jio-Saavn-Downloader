@@ -1,6 +1,6 @@
 input[type=text],
 select {
-    width: 100%;
+    width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
     float: left;
@@ -11,7 +11,7 @@ select {
 }
 
 input[type=submit] {
-    width: 100%;
+    width: 20%;
     background-color: #4caf50;
     color: #fff;
     padding: 14px 20px;
